@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+#encabezado {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+#encabezado .row {
+  padding: 0;
+  margin: 0 auto;
+}
+#encabezado .logo {
+  display: flex;
+  flex-direction: column;
+}
+#encabezado .logo img {
+  width: 10rem;
+  border-radius: 75px;
+}
+#encabezado .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+#encabezado .menu .container-fluid {
+  padding: 0;
+}
+#encabezado .menu li {
+  padding: 15px;
+}
+#encabezado .menu li a {
+  font-size: 1rem;
+  color: wheat;
+}
+#encabezado .menu li a:hover {
+  color: darkblue;
+}
+#encabezado .menu .btn {
+  color: white;
+}
+#encabezado .menu .btn:hover {
+  color: darkblue;
+}
+#encabezado .redes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+}
+#encabezado .redes img {
+  width: 2rem;
+  padding: 0.3rem;
+}
+@media (max-width: 568px) {
+  #encabezado .redes {
+    display: none;
+  }
+  #encabezado .logo img {
+    width: 8rem;
+  }
+}
+@media (max-width: 990px) {
+  #encabezado .redes {
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 568px) {
+  #encabezado .menu {
+    justify-content: flex-end;
+  }
+  #encabezado .menu .navbar-nav {
+    align-items: flex-end;
+  }
+}
+
+.presentacion {
+  margin: 3rem;
+}
+.presentacion h1 {
+  font-size: 2rem;
+  font-family: "Anton", sans-serif;
+}
+
+.carousel {
+  margin-top: 2rem;
+}
+
+.estrenos .peliculas {
+  margin-top: 2rem;
+  padding: 0;
+  width: 100%;
+}
+.estrenos .peliculas .pelis img {
+  margin-top: 2rem;
+  border: solid 1px white;
+  box-shadow: 0px 0px 15px 0px #F25C05;
+}
+.estrenos .peliculas .pelis img:hover {
+  transform: scale(1.1, 1.1);
+}
+.estrenos .peliculas .pelis .contenidoCard h5 {
+  margin-top: 1.4rem;
+  font-size: 1.4rem;
+}
+.estrenos .peliculas .pelis .contenidoCard p {
+  margin: 3px;
+}
+.estrenos .peliculas .pelis .btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px blueviolet;
+  width: 75%;
+}
+@media (max-width: 568px) {
+  .estrenos .pelis img {
+    width: 8rem;
+  }
+}
+
+body {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+}
+
+/*# sourceMappingURL=style.css.map */

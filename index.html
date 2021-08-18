@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="SASS/css/style.css">
+    <title>ProyectoJS</title>
+</head>
+<body class="container-fluid">
+    <header id="encabezado" class="container-fluid">
+        <div class="row container">
+            <div class="col-2 logo container-fluid">
+                <img src="/img/logo/CINEMA FANS.png" alt="logo de cinema fans">
+            </div>
+            <div class="col-8 menu ">
+                <nav class="navbar navbar-expand-lg ">
+                    <div class="container ">
+                        <button class="navbar-toggler navbar-dark bg-dark botonMEnu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Cine</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Video juegos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Compras</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" >Contacto</a>
+                            </li>
+                            </ul>
+                            <form class="d-flex">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>    
+            </div>
+            <div class="col-2 redes">
+                <a href="#"><img src="/img/redesSociales/facebook.png" alt="logo facebook"></a>
+                <a href="#"><img src="/img/redesSociales/instagram.png" alt="logo instagram"></a>
+                <a href="#"><img src="/img/redesSociales/twitter.png" alt="logo twitter"></a>
+                <a href="#"><img src="/img/redesSociales/whatsapp.png" alt="logo whatsapp"></a>
+
+            </div>
+        </div>
+    </header>    
+    
+    <article class="presentacion container d-flex justify-content-center">
+        <h1>Bienvenido a Cinema Fans el mejor sitio para comprar peliculas y videojuegos</h1>
+    </article>
+    
+    <main>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://images2.alphacoders.com/724/thumb-1920-724132.jpg" class="d-block w-100" alt="imagen del joker y harley">
+              </div>
+              <div class="carousel-item">
+                <img src="https://images2.alphacoders.com/820/thumb-1920-82012.jpg" class="d-block w-100" alt="imagen de ironman">
+              </div>
+              <div class="carousel-item">
+                <img src="https://images5.alphacoders.com/419/thumb-1920-419917.jpg" class="d-block w-100" alt="imagen de starwars">
+              </div>
+              <div class="carousel-item">
+                <img src="https://images.alphacoders.com/787/thumb-1920-787294.png" class="d-block w-100" alt="imagende it">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+          <section class="estrenos">
+              <h2 class="container d-flex justify-content-center">Estrenos</h2>
+                <div class="container peliculas">
+                    <div class="row ">
+                        <div class="pelis col "><img src="/img/pelis/blackWidow.jpg" alt="imagen black widow">
+                               <div class="contenidoCard"> 
+                                    <h5 >BLack Widow</h5>
+                                    <p >$1.000 </p>
+                                    <a href="#" class="btn ">Agregar al carrito</a>     
+                                </div>
+                        </div>
+                        <div class=" pelis col  "><img src="/img/pelis/blackPink.jpg" alt="imagen black blackPink">
+                            <div class="contenidoCard"> 
+                                <h5 >BLack Widow</h5>
+                                <p >$1.000 </p>
+                                <a href="#" class="btn ">Agregar al carrito</a>     
+                            </div>
+                        </div>
+                        <div class=" pelis col  "><img src="/img/pelis/cruella.jpg" alt="imagen cruella">
+                            <div class="contenidoCard"> 
+                                <h5 >BLack Widow</h5>
+                                <p >$1.000 </p>
+                                <a href="#" class="btn ">Agregar al carrito</a>     
+                            </div>
+                        </div> 
+                        <div class=" pelis col "><img src="/img/pelis/escuadronSuicida.jpg" alt="imagen escuadron suicida">
+                            <div class="contenidoCard"> 
+                                <h5 >BLack Widow</h5>
+                                <p >$1.000 </p>
+                                <a href="#" class="btn ">Agregar al carrito</a>     
+                            </div>
+                        </div>
+                        <div class="pelis col  "><img src="/img/pelis/elPadre.jpg" alt="imagen de el padre">
+                            <div class="contenidoCard"> 
+                                <h5 >BLack Widow</h5>
+                                <p >$1.000 </p>
+                                <a href="#" class="btn ">Agregar al carrito</a>     
+                            </div>
+                        </div>
+                        <div class="pelis col "><img src="/img/pelis/freeGuy.jpg" alt="imagen de free guy">
+                            <div class="contenidoCard"> 
+                                <h5 >BLack Widow</h5>
+                                <p >$1.000 </p>
+                                <a href="#" class="btn ">Agregar al carrito</a>     
+                            </div>
+                        </div>
+                        <div class="pelis col "><img src="/img/pelis/rapidoYfurioso.jpg" alt="imagen de rapido y furioso 9">
+                            <div class="contenidoCard"> 
+                                <h5 >BLack Widow</h5>
+                                <p >$1.000 </p>
+                                <a href="#" class="btn ">Agregar al carrito</a>     
+                            </div>
+                        </div>
+                        <div class=" pelis col "><img src="/img/pelis/jungleCruise.jpg" alt="imagen de jungle cruise">
+                            <div class="contenidoCard"> 
+                                <h5 >BLack Widow</h5>
+                                <p >$1.000 </p>
+                                <a href="#" class="btn ">Agregar al carrito</a>     
+                            </div>
+                        </div>
+                        <div class=" pelis col "><img src="/img/pelis/laPurga.jpg" alt="imagen de la purga">
+                            <div class="contenidoCard"> 
+                                <h5 >BLack Widow</h5>
+                                <p >$1.000 </p>
+                                <a href="#" class="btn ">Agregar al carrito</a>     
+                            </div>
+                        </div>
+                        <div class=" pelis col "><img src="/img/pelis/spaceJam.jpg" alt="imagen de space jam">
+                            <div class="contenidoCard"> 
+                                <h5 >BLack Widow</h5>
+                                <p >$1.000 </p>
+                                <a href="#" class="btn ">Agregar al carrito</a>     
+                            </div>
+                        </div>
+                        <div class=" pelis col "><img src="/img/pelis/candyman.jpg" alt="imagen de candy man">
+                            <div class="contenidoCard"> 
+                                <h5 >BLack Widow</h5>
+                                <p >$1.000 </p>
+                                <a href="#" class="btn ">Agregar al carrito</a>     
+                            </div>
+                        </div>
+                        <div class=" pelis col "><img src="/img/pelis/crymacho.jpg" alt="imagen de cry macho">
+                            <div class="contenidoCard"> 
+                                <h5 >BLack Widow</h5>
+                                <p >$1.000 </p>
+                                <a href="#" class="btn ">Agregar al carrito</a>     
+                            </div>
+                        </div>
+                        <div class=" pelis col "><img src="/img/pelis/viejos.jpg" alt="imagen de viejos">
+                            <div class="contenidoCard"> 
+                                <h5 >BLack Widow</h5>
+                                <p >$1.000 </p>
+                                <a href="#" class="btn ">Agregar al carrito</a>     
+                            </div>
+                        </div>
+                        <div class=" pelis col "><img src="/img/pelis/reminiscencia.jpg" alt="imagen de reminiscencia">
+                            <div class="contenidoCard"> 
+                                <h5 >BLack Widow</h5>
+                                <p >$1.000 </p>
+                                <a href="#" class="btn ">Agregar al carrito</a>     
+                            </div>
+                        </div>
+                        <div class="pelis col"><img src="/img/pelis/venom.jpg" alt="imagen de venom">
+                            <div class="contenidoCard"> 
+                                <h5 >BLack Widow</h5>
+                                <p >$1.000 </p>
+                                <a href="#" class="btn ">Agregar al carrito</a>     
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+                
+                
+                
+          </section>
+          <section class="juegos">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://images2.alphacoders.com/577/thumb-1920-577076.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item ">
+                    <img src="https://wallpaperaccess.com/full/4813997.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images2.alphacoders.com/600/thumb-1920-600255.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images7.alphacoders.com/320/320623.png" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+          </section>
+
+    </main>
+    <footer>
+
+    </footer>
+    
+    <!-- JS 
+    <script src="/JS/index.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
