@@ -39,7 +39,8 @@ function recomendacion(){
         
     }
 
-
+datos()
+recomendacion()
 
 
  
