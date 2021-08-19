@@ -1,7 +1,7 @@
 #encabezado{
     background-color: black;
-    margin: 0;
-    padding: 0;
+    margin-top: 1rem;
+    padding-bottom: 3rem;
     
     .row{
         padding: 0;
@@ -31,13 +31,14 @@
             padding: 15px;
             a{
                 font-size: 1rem;
-                color: wheat;
+                color: white;
+                font-family: 'Anton', sans-serif;
             }
             a:hover{
                 color: darkblue;
             }
         }.btn{
-            
+            font-family: 'Anton', sans-serif;
             color: white;
         }
         .btn:hover{

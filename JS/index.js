@@ -1,38 +1,45 @@
-let nombre = prompt("ingresa tu nombre");
-let apellido = prompt ("ingresa tu apellido");
-let edad = parseInt(prompt("ingresa tu edad"));
+function datos (){
+    let nombre = prompt("ingresa tu nombre");
+    let apellido = prompt ("ingresa tu apellido");
+    let edad = parseInt(prompt("ingresa tu edad"));
 
 
-if ((nombre !="") && (apellido !="") && (edad !=0) ){
+
+    if ((nombre !="") && (apellido !="") && (edad !=0) ){
     alert("Bienvenido/a " + nombre + " " + apellido );
-    
-}else{
-    alert("Completar todos los datos")
+   
+    }else{
+        alert("Completar todos los datos")
+    }
 }
 
 function recomendacion(){
     let gustos = prompt("¿Que genero te gusta");
-    if ((gustos=="terror")){
+        if (gustos=="terror"){
         alert("Te recomiendo El exorcista");
-    
-        if (gustos=="ciencia ficcion"){
+        }
+        else if (gustos=="ciencia ficcion"){
             alert("Te recomiendo Alien");
         }
-        if (gustos=="avatar"){
+        else if (gustos=="animacion"){
             alert("Te recomiendo Toy Story");
         }
-        if (gustos=="aventura"){
+        else if (gustos=="aventura"){
             alert("Te recomiendo Indiana Jones");
         }
-        if (gustos=="infantil"){
+        else if (gustos=="infantil"){
             alert("Te recomiendo monsters inc");
         }
-        if (gustos=="suspenso"){
-            alert("el silencio de los inocentes");
+        else if (gustos=="suspenso"){
+            alert("Te recomiendo el silencio de los inocentes");
+        }else{
+            alert("aun no analizamos ese genero, fijate en nuestra web si encontras lo que buscas")
+    
         }
+        
     }
-    else {
-        alert("aun no analizamos ese genero, fijate en nuestra web si encontras lo que buscas")
-    }
-} 
- recomendacion();
+
+
+
+
+ 

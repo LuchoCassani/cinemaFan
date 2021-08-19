@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 #encabezado {
   background-color: black;
-  margin: 0;
-  padding: 0;
+  margin-top: 1rem;
+  padding-bottom: 3rem;
 }
 #encabezado .row {
   padding: 0;
@@ -31,12 +31,14 @@
 }
 #encabezado .menu li a {
   font-size: 1rem;
-  color: wheat;
+  color: white;
+  font-family: "Anton", sans-serif;
 }
 #encabezado .menu li a:hover {
   color: darkblue;
 }
 #encabezado .menu .btn {
+  font-family: "Anton", sans-serif;
   color: white;
 }
 #encabezado .menu .btn:hover {
@@ -78,9 +80,11 @@
 }
 
 .presentacion {
-  margin: 3rem;
+  margin: 0;
+  padding: 0;
 }
 .presentacion h1 {
+  margin: 0 auto;
   font-size: 2rem;
   font-family: "Anton", sans-serif;
 }
@@ -116,6 +120,9 @@
   align-items: center;
   border: solid 1px blueviolet;
   width: 75%;
+}
+.estrenos .peliculas .pelis .btn:hover {
+  color: #c501e2;
 }
 @media (max-width: 568px) {
   .estrenos .pelis img {
