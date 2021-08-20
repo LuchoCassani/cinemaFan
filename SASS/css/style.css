@@ -79,6 +79,21 @@
   }
 }
 
+.juegos .grillaJuegos .pelis_juegos img, .estrenos .peliculas .pelis_juegos img {
+  margin-top: 2rem;
+  border: solid 1px white;
+  box-shadow: 0px 0px 15px 0px #F25C05;
+}
+
+.juegos .grillaJuegos .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px blueviolet;
+  width: 75%;
+}
+
 .presentacion {
   margin: 0;
   padding: 0;
@@ -98,34 +113,45 @@
   padding: 0;
   width: 100%;
 }
-.estrenos .peliculas .pelis img {
-  margin-top: 2rem;
-  border: solid 1px white;
-  box-shadow: 0px 0px 15px 0px #F25C05;
-}
-.estrenos .peliculas .pelis img:hover {
+.estrenos .peliculas .pelis_juegos img:hover {
   transform: scale(1.1, 1.1);
 }
-.estrenos .peliculas .pelis .contenidoCard h5 {
+.estrenos .peliculas .pelis_juegos .contenidoCard h5 {
   margin-top: 1.4rem;
   font-size: 1.4rem;
 }
-.estrenos .peliculas .pelis .contenidoCard p {
+.estrenos .peliculas .pelis_juegos .contenidoCard p {
   margin: 3px;
 }
-.estrenos .peliculas .pelis .btn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: solid 1px blueviolet;
-  width: 75%;
-}
-.estrenos .peliculas .pelis .btn:hover {
+.estrenos .peliculas .pelis_juegos .btn:hover {
   color: #c501e2;
 }
 @media (max-width: 568px) {
-  .estrenos .pelis img {
+  .estrenos .pelis_juegos img {
+    width: 8rem;
+  }
+}
+
+.juegos .grillaJuegos {
+  margin-top: 2rem;
+  padding: 0;
+  width: 100%;
+}
+.juegos .grillaJuegos .pelis_juegos img:hover {
+  transform: scale(1.1, 1.1);
+}
+.juegos .grillaJuegos .pelis_juegos .contenidoCard h5 {
+  margin-top: 1.4rem;
+  font-size: 1.4rem;
+}
+.juegos .grillaJuegos .pelis_juegos .contenidoCard p {
+  margin: 3px;
+}
+.juegos .grillaJuegos .pelis_juegos .btn:hover {
+  color: #c501e2;
+}
+@media (max-width: 568px) {
+  .juegos .pelis_juegos img {
     width: 8rem;
   }
 }

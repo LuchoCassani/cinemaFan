@@ -16,22 +16,22 @@ function datos (){
 function recomendacion(){
     let gustos = prompt("¿Que genero te gusta");
         if (gustos=="terror"){
-        alert("Te recomiendo El exorcista");
+        alert("Te recomiendo Candyman");
         }
         else if (gustos=="ciencia ficcion"){
-            alert("Te recomiendo Alien");
+            alert("Te recomiendo Reminiscencia");
         }
         else if (gustos=="animacion"){
             alert("Te recomiendo Toy Story");
         }
         else if (gustos=="aventura"){
-            alert("Te recomiendo Indiana Jones");
+            alert("Te recomiendo Jungle Cruise");
         }
         else if (gustos=="infantil"){
-            alert("Te recomiendo monsters inc");
+            alert("Te recomiendo Space Jam");
         }
-        else if (gustos=="suspenso"){
-            alert("Te recomiendo el silencio de los inocentes");
+        else if (gustos=="accion"){
+            alert("Te recomiendo el Rapidos y Furiosos 9");
         }else{
             alert("aun no analizamos ese genero, fijate en nuestra web si encontras lo que buscas")
     

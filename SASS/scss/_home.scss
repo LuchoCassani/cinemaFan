@@ -1,3 +1,21 @@
+//extends//
+%imagenPelisJuegos{
+    
+    margin-top: 2rem;
+    border: solid 1px white;
+    box-shadow: 0px 0px 15px 0px #F25C05
+} 
+%botonDeCompra{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: solid 1px blueviolet;
+            width: 75%;
+}
+
+
+
 //Titulo princilal//
 .presentacion{
     
@@ -19,6 +37,7 @@
 //Carousel//
 .carousel{
     margin-top: 2rem; 
+    
 }
 
 
@@ -26,16 +45,14 @@
 
 //grilla de estrenos//
 .estrenos{
-   
+    
     .peliculas{
         margin-top: 2rem;
         padding: 0;
             width: 100%;
-        .pelis{
+        .pelis_juegos{
                 img{
-                    margin-top: 2rem;
-                    border: solid 1px white;
-                    box-shadow: 0px 0px 15px 0px #F25C05
+                    @extend %imagenPelisJuegos
                 }
                     img:hover{
                         transform: scale(1.1, 1.1);
@@ -51,12 +68,7 @@
                         }
                     }    
                 .btn{
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
-                            border: solid 1px blueviolet;
-                            width: 75%;
+                     @extend %botonDeCompra       
                         }
                         .btn:hover{
                             color: #c501e2;
@@ -66,12 +78,51 @@
     }    
 
     @media (max-width: 568px){
-        .pelis img{
+        .pelis_juegos img{
             width: 8rem;
         }
     }
 }    
 
 
-
+//grilla de juegos//
    
+.juegos{
+        .grillaJuegos{
+            margin-top: 2rem;
+            padding: 0;
+            width: 100%;
+                
+                .pelis_juegos{
+                        img{
+                            @extend %imagenPelisJuegos
+                        }
+                            img:hover{
+                                transform: scale(1.1, 1.1);
+                            }
+                        .contenidoCard{
+                                h5{
+                                    margin-top: 1.4rem;
+                                    font-size: 1.4rem;
+                                    
+                                }
+                                p{
+                                    margin: 3px;
+                                }
+                            }    
+                        .btn{
+                            @extend %botonDeCompra       
+                                }
+                                .btn:hover{
+                                    color: #c501e2;
+                                }
+                            
+                }
+        }    
+
+        @media (max-width: 568px){
+            .pelis_juegos img{
+                width: 8rem;
+            }
+        }
+}
