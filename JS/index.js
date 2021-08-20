@@ -9,9 +9,11 @@ function datos (){
     alert("Bienvenido/a " + nombre + " " + apellido );
    
     }else{
-        alert("Completar todos los datos")
+        alert("Completar todos los datos");
+        
     }
 }
+
 
 function recomendacion(){
     let gustos = prompt("¿Que genero te gusta");
@@ -40,7 +42,7 @@ function recomendacion(){
     }
 
 datos()
+
 recomendacion()
 
 
- 
