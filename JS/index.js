@@ -1,4 +1,4 @@
-/*
+
 function datos (){
     let nombre = prompt("ingresa tu nombre");
     let apellido = prompt ("ingresa tu apellido");
@@ -46,7 +46,7 @@ datos()
 
 recomendacion()
 
-*/
+
 
 // OBEJTOS
 

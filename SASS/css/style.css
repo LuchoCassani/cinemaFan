@@ -80,6 +80,7 @@
 }
 
 .juegos .grillaJuegos .pelis_juegos img, .estrenos .peliculas .pelis_juegos img {
+  height: 22rem;
   margin-top: 2rem;
   border: solid 1px white;
   box-shadow: 0px 0px 15px 0px #F25C05;
