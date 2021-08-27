@@ -124,3 +124,12 @@ for (const pelis of arrayPelis){
     console.log(pelis)
 }
 
+const nuevasPelis = [];
+nuevasPelis.push (new Peliculas("La purga", "suspenso", "2h", 500));
+nuevasPelis.push (new Peliculas("La purga", "suspenso", "2h", 500));
+nuevasPelis.push (new Peliculas("La purga", "suspenso", "2h", 500));
+nuevasPelis.push (new Peliculas("La purga", "suspenso", "2h", 500));
+nuevasPelis.push (new Peliculas("La purga", "suspenso", "2h", 500));
+for (const peliculas of nuevasPelis){
+    console.log(nuevasPelis)
+}
