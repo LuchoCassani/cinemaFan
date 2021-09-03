@@ -157,6 +157,13 @@
   }
 }
 
+ol {
+  color: yellow;
+}
+ol li {
+  color: white;
+}
+
 body {
   position: absolute;
   padding: 0;

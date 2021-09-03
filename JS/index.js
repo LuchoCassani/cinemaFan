@@ -1,4 +1,5 @@
-
+// datos del usuario almacenados en sessionStorege
+/*
 function datos (){
     let nombre = prompt("ingresa tu nombre");
     let apellido = prompt ("ingresa tu apellido");
@@ -13,6 +14,9 @@ function datos (){
         alert("Completar todos los datos");
         
     }
+    sessionStorage.setItem("nombre", nombre);
+    sessionStorage.setItem("apellido", apellido);
+    sessionStorage.setItem("edad", edad)
 }
 
 
@@ -39,62 +43,15 @@ function recomendacion(){
             alert("aun no analizamos ese genero, fijate en nuestra web si encontras lo que buscas")
     
         }
-        
+        sessionStorage.setItem("gustos", gustos)   
     }
 
 datos()
 
 recomendacion()
+*/
 
 
-
-// OBEJTOS
-
-const pelicula1 = {
-    nombre: "Black Widow",
-    genero: "accion",
-    duracion: "2h 14min"
-};
-const pelicula2 = {
-    nombre: "Blackpink",
-    genero: "documental",
-    duracion: "1h 41min"
-};
-const pelicula3 = {
-    nombre: "Cruella",
-    genero: "fantasia",
-    duracion: "2h 14min"
-};
-const pelicula4 = {
-    nombre: "El Escuadron Suicida",
-    genero: "accion",
-    duracion: "2h 13min"
-};
-const pelicula5 = {
-    nombre: "El Padre",
-    genero: "drama",
-    duracion: "1h 37min"
-};
-const pelicula6 = {
-    nombre: "Free Guy",
-    genero: "ciencia ficcion",
-    duracion: "1h 55min"
-};
-const pelicula7 = {
-    nombre: "Rapidos y Furiosos 9",
-    genero: "accion",
-    duracion: "2h 25min"
-};
-const pelicula8 = {
-    nombre: "Jungle Cruise",
-    genero: "aventura",
-    duracion: "2h 42min"
-};
-const pelicula9 = {
-    nombre: "La Purga",
-    genero: "suspenso",
-    duracion: "1h 44min"
-};
 
 //class constructora
 
@@ -106,30 +63,84 @@ class Peliculas {
         this.precio = parseFloat(precio);
     }
     datosPeliculas(){
-        console.log("La pelicula "+ this.nombre + "pertenece al genero " + this.genero + " y tiene una duracion de " + this.duracion + ". Su valor es de " + (this.precio= this.precio*1.21) + " pesos")
+        return("La pelicula "+ this.nombre + " pertenece al genero " + this.genero + " y tiene una duracion de " + this.duracion + ". Su valor es de " + (this.precio= this.precio*1.21) + " pesos")
     }
     
 }
-const pelicula10 = new Peliculas ("Space Jam ",  "animacion/infantil", "2h", 350);
-const pelicula11 = new Peliculas ("Candyman ",  "terror",  "2h", 555);
-const pelicula12 = new Peliculas ("Cry Macho ",  "drama",  "2h 30min", 666);
-const pelicula13 = new Peliculas ("Viejos ",  "suspenso",  "1h 58min", 425);
-const pelicula14 = new Peliculas ("Reminiscencia ","ciencia ficcion",  "2h 28min", 777);
-const pelicula15 = new Peliculas ("Venom ",  "accion",  "2h 20min", 620);
 
-pelicula10.datosPeliculas();
 
-const arrayPelis = ["pelicula10", "pelicula11", "pelicula12", "pelicula13", "pelicula14", "pelicula15"];
-for (const pelis of arrayPelis){
-    console.log(pelis)
-}
 
 const nuevasPelis = [];
-nuevasPelis.push (new Peliculas("La purga", "suspenso", "2h", 500));
-nuevasPelis.push (new Peliculas("La purga", "suspenso", "2h", 500));
-nuevasPelis.push (new Peliculas("La purga", "suspenso", "2h", 500));
-nuevasPelis.push (new Peliculas("La purga", "suspenso", "2h", 500));
-nuevasPelis.push (new Peliculas("La purga", "suspenso", "2h", 500));
-for (const peliculas of nuevasPelis){
-    console.log(nuevasPelis)
+nuevasPelis.push (new Peliculas("Black Widow", "accion", "2h 14min", 500));
+nuevasPelis.push (new Peliculas("Blackpink", "documental", "1h 41min", 700));
+nuevasPelis.push (new Peliculas("El Escuadron Suicida", "accion", "2h 13min", 350));
+nuevasPelis.push (new Peliculas("El padre", "drama", "1h 37min", 325));
+nuevasPelis.push (new Peliculas("Free Guy", "ciencia ficcion", "1h 55min", 450));
+nuevasPelis.push (new Peliculas("Rapidos y Furiosos 9", "accion", "2h 25min", 500));
+nuevasPelis.push (new Peliculas("Jungle Cruise", "aventura", "2h 42min", 750));
+nuevasPelis.push (new Peliculas("La Purga", "suspenso", "1h 44min", 250));
+nuevasPelis.push (new Peliculas("Space Jam", "animacion/infantil", "2h", 500));
+nuevasPelis.push (new Peliculas("Candyman", "terror", "2h", 320));
+nuevasPelis.push (new Peliculas("Cry Macho", "drama", "2h 30min", 780));
+nuevasPelis.push (new Peliculas("viejos", "suspenso", "1h 58min", 600));
+nuevasPelis.push (new Peliculas("Reminiscencia", "ciencia ficcion", "2h 28min", 525));
+nuevasPelis.push (new Peliculas("Venom", "accion", "2h 20min", 340));
+
+const enJSON = JSON.stringify(nuevasPelis);
+localStorage.setItem("nuevasPelis", enJSON);
+
+function datosPeliculas(){return("La pelicula "+ this.nombre + " pertenece al genero " + this.genero + " y tiene una duracion de " + this.duracion + ". Su valor es de " + (this.precio= this.precio*1.21) + " pesos")
+}
+
+
+    let lista = document.createElement("ol");
+    lista.innerHTML = ("Peliculas disponibles");
+    document.body.appendChild(lista);
+    function listaPeliculas(){        
+        let itemLista = document.createElement("li");
+        itemLista.innerHTML= (nuevasPelis[0].datosPeliculas());
+        lista.appendChild(itemLista);
+        
+        let itemLista1 = document.createElement("li");
+        itemLista1.innerHTML= (nuevasPelis[1].datosPeliculas());
+        lista.appendChild(itemLista1);
+        
+        let itemLista2 = document.createElement("li");
+        itemLista2.innerHTML= (nuevasPelis[2].datosPeliculas());
+        lista.appendChild(itemLista2);
+        
+        let itemLista3 = document.createElement("li");
+        itemLista3.innerHTML= (nuevasPelis[3].datosPeliculas());
+        lista.appendChild(itemLista3);
+        
+        let itemLista4 = document.createElement("li");
+        itemLista4.innerHTML= (nuevasPelis[4].datosPeliculas());
+        lista.appendChild(itemLista4);
+        let itemLista5 = document.createElement("li");
+        itemLista5.innerHTML= (nuevasPelis[5].datosPeliculas());
+        lista.appendChild(itemLista5);
+        
+        let itemLista6 = document.createElement("li");
+        itemLista6.innerHTML= (nuevasPelis[6].datosPeliculas());
+        lista.appendChild(itemLista6);
+        
+        let itemLista7 = document.createElement("li");
+        itemLista7.innerHTML= (nuevasPelis[7].datosPeliculas());
+        lista.appendChild(itemLista7);
+
+    
+}
+
+listaPeliculas();
+
+
+let btn = document.getElementsByClassName("btn");
+function agregar(){
+
+    alert("Se agrego al carrito de compras")
+
+    
+};
+for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener('click', agregar, false);
 }
