@@ -55,7 +55,7 @@ recomendacion()
 
 //class constructora
 
-class Peliculas {
+class Pelicula {
     constructor(nombre, genero, duracion, precio) {
         this.nombre = nombre;
         this.genero = genero;
@@ -71,20 +71,20 @@ class Peliculas {
 
 
 const nuevasPelis = [];
-nuevasPelis.push (new Peliculas("Black Widow", "accion", "2h 14min", 500));
-nuevasPelis.push (new Peliculas("Blackpink", "documental", "1h 41min", 700));
-nuevasPelis.push (new Peliculas("El Escuadron Suicida", "accion", "2h 13min", 350));
-nuevasPelis.push (new Peliculas("El padre", "drama", "1h 37min", 325));
-nuevasPelis.push (new Peliculas("Free Guy", "ciencia ficcion", "1h 55min", 450));
-nuevasPelis.push (new Peliculas("Rapidos y Furiosos 9", "accion", "2h 25min", 500));
-nuevasPelis.push (new Peliculas("Jungle Cruise", "aventura", "2h 42min", 750));
-nuevasPelis.push (new Peliculas("La Purga", "suspenso", "1h 44min", 250));
-nuevasPelis.push (new Peliculas("Space Jam", "animacion/infantil", "2h", 500));
-nuevasPelis.push (new Peliculas("Candyman", "terror", "2h", 320));
-nuevasPelis.push (new Peliculas("Cry Macho", "drama", "2h 30min", 780));
-nuevasPelis.push (new Peliculas("viejos", "suspenso", "1h 58min", 600));
-nuevasPelis.push (new Peliculas("Reminiscencia", "ciencia ficcion", "2h 28min", 525));
-nuevasPelis.push (new Peliculas("Venom", "accion", "2h 20min", 340));
+nuevasPelis.push (new Pelicula("Black Widow", "accion", "2h 14min", 500));
+nuevasPelis.push (new Pelicula("Blackpink", "documental", "1h 41min", 700));
+nuevasPelis.push (new Pelicula("El Escuadron Suicida", "accion", "2h 13min", 350));
+nuevasPelis.push (new Pelicula("El padre", "drama", "1h 37min", 325));
+nuevasPelis.push (new Pelicula("Free Guy", "ciencia ficcion", "1h 55min", 450));
+nuevasPelis.push (new Pelicula("Rapidos y Furiosos 9", "accion", "2h 25min", 500));
+nuevasPelis.push (new Pelicula("Jungle Cruise", "aventura", "2h 42min", 750));
+nuevasPelis.push (new Pelicula("La Purga", "suspenso", "1h 44min", 250));
+nuevasPelis.push (new Pelicula("Space Jam", "animacion/infantil", "2h", 500));
+nuevasPelis.push (new Pelicula("Candyman", "terror", "2h", 320));
+nuevasPelis.push (new Pelicula("Cry Macho", "drama", "2h 30min", 780));
+nuevasPelis.push (new Pelicula("viejos", "suspenso", "1h 58min", 600));
+nuevasPelis.push (new Pelicula("Reminiscencia", "ciencia ficcion", "2h 28min", 525));
+nuevasPelis.push (new Pelicula("Venom", "accion", "2h 20min", 340));
 
 const enJSON = JSON.stringify(nuevasPelis);
 localStorage.setItem("nuevasPelis", enJSON);
