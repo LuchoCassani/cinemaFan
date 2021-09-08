@@ -84,9 +84,10 @@
   margin-top: 2rem;
   border: solid 1px white;
   box-shadow: 0px 0px 15px 0px #F25C05;
+  width: 15rem;
 }
 
-.juegos .grillaJuegos .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btn {
+.juegos .grillaJuegos .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btnInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -124,7 +125,14 @@
 .estrenos .peliculas .pelis_juegos .contenidoCard p {
   margin: 3px;
 }
+.estrenos .peliculas .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btnInfo {
+  text-decoration: none;
+  color: #F25C05;
+}
 .estrenos .peliculas .pelis_juegos .btn:hover {
+  color: #c501e2;
+}
+.estrenos .peliculas .pelis_juegos .btnInfo:hover {
   color: #c501e2;
 }
 @media (max-width: 568px) {
