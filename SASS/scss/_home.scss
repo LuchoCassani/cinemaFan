@@ -47,6 +47,13 @@
 //grilla de estrenos//
 .estrenos{
     
+    .filtroGenero{
+        .activo{
+            color: #F25C05;
+            text-decoration: none;
+            padding: 2rem;
+        }
+    }
     .peliculas{
         margin-top: 2rem;
         padding: 0;
@@ -139,5 +146,19 @@ ol{
             
             color: white;
                 
+        }
+}
+
+//sugerencias
+
+#sugerencias{
+    display: flex;
+    flex-direction: column;
+    
+    margin: 0;
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 }

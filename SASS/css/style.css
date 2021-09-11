@@ -110,6 +110,11 @@
   margin-top: 2rem;
 }
 
+.estrenos .filtroGenero .activo {
+  color: #F25C05;
+  text-decoration: none;
+  padding: 2rem;
+}
 .estrenos .peliculas {
   margin-top: 2rem;
   padding: 0;
@@ -170,6 +175,17 @@ ol {
 }
 ol li {
   color: white;
+}
+
+#sugerencias {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+#sugerencias form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 body {

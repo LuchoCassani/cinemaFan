@@ -70,6 +70,8 @@ class Pelicula {
 
 
 
+
+
 const nuevasPelis = [];
 nuevasPelis.push (new Pelicula("Black Widow", "accion", "2h 14min", 500));
 nuevasPelis.push (new Pelicula("Blackpink", "documental", "1h 41min", 700));
@@ -88,6 +90,15 @@ nuevasPelis.push (new Pelicula("Venom", "accion", "2h 20min", 340));
 
 const enJSON = JSON.stringify(nuevasPelis);
 localStorage.setItem("nuevasPelis", enJSON);
+
+
+for (i=0 ; i< nuevasPelis.length; i++) {
+    nuevasPelis[i]
+    
+}
+
+
+/*
 
 function datosPeliculas(){return("La pelicula "+ this.nombre + " pertenece al genero " + this.genero + " y tiene una duracion de " + this.duracion + ". Su valor es de " + (this.precio= this.precio*1.21) + " pesos")
 }
@@ -130,8 +141,9 @@ function datosPeliculas(){return("La pelicula "+ this.nombre + " pertenece al ge
 
     
 }
-
 listaPeliculas();
+*/
+
 
 //agregar al carrito peliculas
 
@@ -151,21 +163,7 @@ for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener('click', agregar, false);
 }
 
-let btnInfo = document.getElementsByClassName("btnInfo");
-function agregar(){
 
-    Swal.fire({
-        position: 'top-center',
-        icon: 'success',
-        title: 'Producto agregado al carrito',
-        showConfirmButton: false,
-        timer: 1600,
-      })
-
-};
-for (let i = 0; i < btnInfo.length; i++) {
-    btnInfo[i].addEventListener('click', agregar, false);
-}
 
 
 
@@ -250,3 +248,128 @@ let imgVenom = document.getElementById("imgVenom")
 imgVenom.onmouseover =() => imgVenom.src = "https://es.web.img2.acsta.net/pictures/21/08/31/16/41/4145554.jpg"
 imgVenom.onmouseout = () => imgVenom.src = "https://static.cinemarkhoyts.com.ar/Images/ComingSoon/200x285/587.jpg?v=02092021"
 
+
+/*
+const enlaces = document.querySelectorAll("#categorias a");
+enlaces.forEach ( (elemento) =>{
+     elemento.addEventListener("click", (evento) => {
+         evento.preventDefault();
+         enlaces.forEach((enlace) => enlace.classList.remove("activo"));
+         evento.target.classList.add("activo")
+
+         let categoria = evento.target.innerHTML.toLowerCase();
+        
+
+     });
+
+
+
+})
+*/
+/*
+ const agregarCarrito = document.querySelectorAll(".btn");
+ agregarCarrito.forEach((agregarCarritoBoton) => {
+     agregarCarritoBoton.addEventListener("click",elementoClickeado);
+ })
+
+ const botonComprar = document.querySelector(".botonComprar");
+ botonComprar.addEventListener("click", botonComprarClickeado);
+
+ const itemCarrito = document.querySelector("itemCarrito");
+
+ function elementoClickeado (event) {
+    const boton =event.target;
+    const item = boton.closest(".item");
+
+    const itemTitle = item.querySelector('.item_title').textContent;
+    const itemPrice = item.querySelector('.item_price').textContent;
+    const itemImage = item.querySelector('.item_image').src;
+
+    agregarItemAlCarrito (itemTitle, itemPrice, itemImage)
+
+ }
+
+ function agregarItemAlCarrito (itemTitle, itemPrice, itemImage){
+
+ }*/
+
+
+ const sugerencias = []
+     
+let addButton = document.getElementById("btnSugerencia")
+
+addButton.addEventListener("click", addToDoItem);
+
+function addToDoItem(){
+    alert("Clickeaste el boton");
+    let nombre = toDoEntryBox.value;
+    let apellido = toDoEntryBox2.value;
+    let genero = toDoEntryBox3.value;
+    let comentario = toDoEntryBox4.value;
+
+    newToDoItem(nombre);
+    newToDoItem(apellido);
+    newToDoItem(genero);
+    newToDoItem(comentario);
+
+    const pasarJSON = JSON.stringify(sugerencias);
+    sessionStorage.setItem("sugerencias", pasarJSON);
+    
+    
+    for (i=0 ; i< sugerencias.length; i++) {
+        sugerencias[i]
+        
+ 
+    }
+
+    sugerencias.push(nombre, apellido, genero, comentario);
+    
+}
+
+
+
+
+let toDoEntryBox = document.getElementById("nombre");
+let toDoEntryBox2 = document.getElementById("apellido");
+let toDoEntryBox3 = document.getElementById("genero");
+let toDoEntryBox4 = document.getElementById("comentario");
+let toDoList = document.getElementById("tablaSugerencias");
+
+
+
+
+
+
+function newToDoItem (nombre, apellido, genero, comentario) {
+    let toDoItem = document.createElement("td");
+    let toDoItem2 = document.createElement("td");
+    let toDoItem3 = document.createElement("td");
+    let toDoItem4 = document.createElement("td");
+
+
+
+    let toDoText = document.createTextNode(nombre);
+    let toDoText2 = document.createTextNode(apellido);
+    let toDoText3 = document.createTextNode(genero);
+    let toDoText4 = document.createTextNode(comentario);
+
+
+    toDoItem.appendChild(toDoText)
+    toDoItem2.appendChild(toDoText2)
+    toDoItem3.appendChild(toDoText3)
+    toDoItem4.appendChild(toDoText4)
+
+
+
+    toDoList.appendChild(toDoItem)
+    
+}   
+ 
+
+ 
+ 
+  
+ 
+
+
+ 
