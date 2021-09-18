@@ -369,7 +369,7 @@ function updateShoppingCartTotal() {
     );
     total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
   });
-  shoppingCartTotal.innerHTML = `${total.toFixed(2)}€`;
+  shoppingCartTotal.innerHTML = `${total.toFixed(2)}$`;
 }
 
 function removeShoppingCartItem(event) {
@@ -389,6 +389,8 @@ function comprarButtonClicked() {
   updateShoppingCartTotal();
 }
 
+
+/*
 //Buscador
 let buscador = $("#table").DataTable();
 $("#inputSearch").keyup(function () { 
@@ -403,3 +405,4 @@ $("#inputSearch").keyup(function () {
       }
     }
 });
+*/
