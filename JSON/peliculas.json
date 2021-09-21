@@ -1,0 +1,117 @@
+[
+  {
+    "id": 1,
+    "nombre1": "Black Widow",
+    "genero1": "Accion",
+    "video1": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion1": "2hs 14min"
+  },
+  {
+    "id": 2,
+    "nombre2": "Blackpink",
+    "genero2": "documental",
+    "video2": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion2": "1hs 41min"
+  },
+  {
+    "id": 3,
+    "nombre3": "Cruella",
+    "genero3": "Drama",
+    "video3": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion1": "2hs 14min"
+  },
+  {
+    "id": 4,
+    "nombre4": "El Escuadron Suicida",
+    "genero4": "Accion",
+    "video4": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion4": "2hs 13min"
+  },
+  {
+    "id": 5,
+    "nombre5": "El padre",
+    "genero5": "Drama",
+    "video5": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion5": "1hs 37min"
+  },
+  {
+    "id": 6,
+    "nombre6": "Free Guy",
+    "genero6": "Ciencia Ficcion",
+    "video6": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion6": "1hs 55min"
+  },
+  {
+    "id": 7,
+    "nombre7": "Rapidos y Furiosos 9",
+    "genero7": "Accion",
+    "video7": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion7": "2hs 25min"
+  },
+  {
+    "id": 8,
+    "nombre8": "Jungle Cruise",
+    "genero8": "Aventura",
+    "video8": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion8": "2hs 42min"
+  },
+  {
+    "id": 9,
+    "nombre9": "La Purga",
+    "genero9": "Suspenso",
+    "video9": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion9": "1hs 44min"
+  },
+  {
+    "id": 10,
+    "nombre10": "Space Jam",
+    "genero10": "Animacion/Infantil",
+    "video10": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion10": "2hs"
+  },
+  {
+    "id": 11,
+    "nombre11": "Candyman",
+    "genero11": "Terror",
+    "video11": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion11": "2hs"
+  },
+  {
+    "id": 12,
+    "nombre12": "Cry Macho",
+    "genero12": "Drama",
+    "video12": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion12": "2hs 30min"
+  },
+  {
+    "id": 13,
+    "nombre13": "Viejos",
+    "genero13": "Suspenso",
+    "video13": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion13": "1hs 58min"
+  },
+  {
+    "id": 14,
+    "nombre14": "Reminiscencia",
+    "genero14": "Ciencia Ficcion",
+    "video14": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion14": "2hs 28min"
+  },
+  {
+    "id": 15,
+    "nombre15": "Venom",
+    "genero15": "Accion",
+    "video15": "src=https://www.youtube.com/embed/gR3JFH_3LhY" ,
+    "duracion15": "2hs 20min"
+  }
+
+
+
+
+
+
+
+
+
+
+]

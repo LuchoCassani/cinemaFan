@@ -1,59 +1,6 @@
-// datos del usuario almacenados en sessionStorege
-/*
-function datos (){
-    let nombre = prompt("ingresa tu nombre");
-    let apellido = prompt ("ingresa tu apellido");
-    let edad = parseInt(prompt("ingresa tu edad"));
 
 
-
-    if ((nombre !="") && (apellido !="") && (edad !=0) ){
-    alert("Bienvenido/a " + nombre + " " + apellido );
-   
-    }else{
-        alert("Completar todos los datos");
-        
-    }
-    sessionStorage.setItem("nombre", nombre);
-    sessionStorage.setItem("apellido", apellido);
-    sessionStorage.setItem("edad", edad)
-}
-
-
-function recomendacion(){
-    let gustos = prompt("¿Que genero te gusta");
-        if (gustos=="terror"){
-        alert("Te recomiendo Candyman");
-        }
-        else if (gustos=="ciencia ficcion"){
-            alert("Te recomiendo Reminiscencia");
-        }
-        else if (gustos=="animacion"){
-            alert("Te recomiendo Toy Story");
-        }
-        else if (gustos=="aventura"){
-            alert("Te recomiendo Jungle Cruise");
-        }
-        else if (gustos=="infantil"){
-            alert("Te recomiendo Space Jam");
-        }
-        else if (gustos=="accion"){
-            alert("Te recomiendo el Rapidos y Furiosos 9");
-        }else{
-            alert("aun no analizamos ese genero, fijate en nuestra web si encontras lo que buscas")
-    
-        }
-        sessionStorage.setItem("gustos", gustos)   
-    }
-
-datos()
-
-recomendacion()
-*/
-
-
-
-//class constructora
+//class constructora de pellculas
 
 class Pelicula {
     constructor(nombre, genero, duracion, precio) {
@@ -70,11 +17,12 @@ class Pelicula {
 
 
 
-
+//array e peliculas
 
 const nuevasPelis = [];
 nuevasPelis.push (new Pelicula("Black Widow", "accion", "2h 14min", 500));
 nuevasPelis.push (new Pelicula("Blackpink", "documental", "1h 41min", 700));
+nuevasPelis.push (new Pelicula("Cruella", "drama", "2h 13min", 350));
 nuevasPelis.push (new Pelicula("El Escuadron Suicida", "accion", "2h 13min", 350));
 nuevasPelis.push (new Pelicula("El padre", "drama", "1h 37min", 325));
 nuevasPelis.push (new Pelicula("Free Guy", "ciencia ficcion", "1h 55min", 450));
@@ -97,6 +45,7 @@ for (i=0 ; i< nuevasPelis.length; i++) {
     
 }
 
+//alerta agregado al carrito (tanto peliculas como juegos)
 
 const producto =nuevasPelis
 
@@ -106,10 +55,9 @@ $(".btn").click(function(){
         icon: 'success',
         title: 'Producto agregado al carrito',
         showConfirmButton: false,
-        timer: 1600,
+        timer: 1200,
       });
         
- 
 })
 
 
@@ -406,3 +354,522 @@ $("#inputSearch").keyup(function () {
     }
 });
 */
+// Info extra obtenida del Json
+/*
+$("#bwInfo").append('<button id="btn2">Mas info</button>');
+$("#btn2").click(function(){
+  $.get("../JSON/peliculas.json", function (respuesta, estado) {
+  if(estado === "success"){
+    let misDatos = respuesta;
+    for (const dato of misDatos) {
+      $("#bwInfo").prepend(`<div id="div1">
+                              <h3>${dato.nombre1}</h3>
+                              <p> ${dato.genero1}</p>
+                              <p> ${dato.duracion1}</p>
+                              <p> <iframe width="300" height="315" src="https://www.youtube.com/embed/gR3JFH_3LhY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+                              </div>`)
+                              
+
+                              
+    }  
+    
+  }
+  
+  }); 
+
+
+})
+
+
+*/
+
+
+
+
+
+//Boton mas info y trailer Blackwidow
+
+
+$("#bwInfo").append('<button id="btn1" class="btn">Mas info!</button>');
+$("#bwInfo").prepend(`<div id="div1" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[0].precio}</h4>
+                              <p> Genero: ${nuevasPelis[0].genero}</p>
+                              <p> Duracion: ${nuevasPelis[0].duracion}</p>
+                              <button id="btn1_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn1").click(() => { 
+  $("#div1").toggle("slow");
+});
+
+$("#btn1_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Blackwidow</u></strong>',
+      html:
+        '<iframe width="350" height="315" src="https://www.youtube.com/embed/gR3JFH_3LhY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer Blackpink
+
+$("#bpInfo").append('<button id="btn2" class="btn">Mas info!</button>');
+$("#bpInfo").prepend(`<div id="div2" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[1].precio}</h4>
+                              <p> Genero: ${nuevasPelis[1].genero}</p>
+                              <p> Duracion: ${nuevasPelis[1].duracion}</p>
+                              <button id="btn2_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn2").click(() => { 
+  $("#div2").toggle("slow");
+});
+
+$("#btn2_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Blackpink</u></strong>',
+      html:
+        '<iframe width="350" height="315" src="https://www.youtube.com/embed/7jx_vdvxWu0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer Cruella
+
+$("#cruellaInfo").append('<button id="btn3" class="btn">Mas info!</button>');
+$("#cruellaInfo").prepend(`<div id="div3" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[2].precio}</h4>
+                              <p> Genero: ${nuevasPelis[2].genero}</p>
+                              <p> Duracion: ${nuevasPelis[2].duracion}</p>  
+                              <button id="btn3_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn3").click(() => { 
+  $("#div3").toggle("slow");
+});
+
+$("#btn3_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Cruella</u></strong>',
+      html:
+        '<iframe width="280" height="315" src="https://www.youtube.com/embed/gmRKv7n2If8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer Esc Suicida
+
+$("#esInfo").append('<button id="btn4" class="btn">Mas info!</button>');
+$("#esInfo").prepend(`<div id="div4" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[3].precio}</h4>
+                              <p> Genero: ${nuevasPelis[3].genero}</p>
+                              <p> Duracion: ${nuevasPelis[3].duracion}</p>
+                              <button id="btn4_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn4").click(() => { 
+  $("#div4").toggle("slow");
+});
+
+$("#btn4_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Escuadron Suicida</u></strong>',
+      html:
+        '<iframe width="350" height="315" src="https://www.youtube.com/embed/IblLmbGxw1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer Padre
+
+$("#padreInfo").append('<button id="btn5" class="btn">Mas info!</button>');
+$("#padreInfo").prepend(`<div id="div5" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[4].precio}</h4>
+                              <p> Genero: ${nuevasPelis[4].genero}</p>
+                              <p> Duracion: ${nuevasPelis[4].duracion}</p>
+                              <button id="btn5_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn5").click(() => { 
+  $("#div5").toggle("slow");
+});
+
+$("#btn5_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Padre</u></strong>',
+      html:
+        '<iframe width="350" height="315" src="https://www.youtube.com/embed/GvcW2ArYpwY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+//Boton mas info y trailer Freeguy
+
+$("#fgInfo").append('<button id="btn6" class="btn">Mas info!</button>');
+$("#fgInfo").prepend(`<div id="div6" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[5].precio}</h4>
+                              <p> Genero: ${nuevasPelis[5].genero}</p>
+                              <p> Duracion: ${nuevasPelis[5].duracion}</p>
+                              <button id="btn6_trailer" type="button">Trailer</button> 
+                              </div>`);
+                              
+$("#btn6").click(() => { 
+  $("#div6").toggle("slow");
+});
+
+$("#btn6_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Free Guy</u></strong>',
+      html:
+        '<iframe width="350" height="315" src="https://www.youtube.com/embed/pdCP9doJARE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+//Boton mas info y trailer RyF9
+
+$("#rYfInfo").append('<button id="btn7" class="btn">Mas info!</button>');
+$("#rYfInfo").prepend(`<div id="div7" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[6].precio}</h4>
+                              <p> Genero: ${nuevasPelis[6].genero}</p>
+                              <p> Duracion: ${nuevasPelis[6].duracion}</p> 
+                              <button id="btn7_trailer" type="button">Trailer</button> 
+                              </div>`);
+                              
+$("#btn7").click(() => { 
+  $("#div7").toggle("slow");
+});
+
+$("#btn7_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Rapido y Furioso 9</u></strong>',
+      html:
+        '<iframe width="350" height="315" src="https://www.youtube.com/embed/3YNwcdVkpZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer Jungle Cruise
+
+
+$("#jcInfo").append('<button id="btn8" class="btn">Mas info!</button>');
+$("#jcInfo").prepend(`<div id="div8" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[7].precio}</h4>
+                              <p> Genero: ${nuevasPelis[7].genero}</p>
+                              <p> Duracion: ${nuevasPelis[7].duracion}</p>
+                              <button id="btn8_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn8").click(() => { 
+  $("#div8").toggle("slow");
+});
+
+$("#btn8_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Jungle Cruise</u></strong>',
+      html:
+        '<iframe width="350" height="315" src="https://www.youtube.com/embed/f_HvoipFcA8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer Purga
+
+$("#purgaInfo").append('<button id="btn9" class="btn">Mas Info!</button>');
+$("#purgaInfo").prepend(`<div id="div9" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[8].precio}</h4>
+                              <p> Genero: ${nuevasPelis[8].genero}</p>
+                              <p> Duracion: ${nuevasPelis[8].duracion}</p>
+                              <button id="btn9_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn9").click(() => { 
+  $("#div9").toggle("slow");
+});
+
+$("#btn9_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>La Purga</u></strong>',
+      html:
+        '<iframe width="350" height="315" src="https://www.youtube.com/embed/xOrXpK-rUaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer Space Jam
+
+
+$("#sjInfo").append('<button id="btn10" class="btn">Mas Info!</button>');
+$("#sjInfo").prepend(`<div id="div10" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[9].precio}</h4>
+                              <p> Genero: ${nuevasPelis[9].genero}</p>
+                              <p> Duracion: ${nuevasPelis[9].duracion}</p>
+                              <button id="btn10_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn10").click(() => { 
+  $("#div10").toggle("slow");
+});
+
+$("#btn10_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Space Jam</u></strong>',
+      html:
+        '<iframe width="350" height="315" src="https://www.youtube.com/embed/olXYZOsXw_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+
+
+//Boton mas info y trailer Candyman
+
+
+$("#candyInfo").append('<button id="btn11" class="btn">Mas Info!</button>');
+$("#candyInfo").prepend(`<div id="div11" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[10].precio}</h4>
+                              <p> Genero: ${nuevasPelis[10].genero}</p>
+                              <p> Duracion: ${nuevasPelis[10].duracion}</p>
+                              <button id="btn11_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn11").click(() => { 
+  $("#div11").toggle("slow");
+});
+
+$("#btn11_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Candyman</u></strong>',
+      html:
+        '<iframe width="350" height="315" src="https://www.youtube.com/embed/TPBH3XO8YEU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+
+
+//Boton mas info y trailer Cry Macho
+
+$("#cmInfo").append('<button id="btn12" class="btn">Mas Info!</button>');
+$("#cmInfo").prepend(`<div id="div12" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[11].precio}</h4>
+                              <p> Genero: ${nuevasPelis[11].genero}</p>
+                              <p> Duracion: ${nuevasPelis[11].duracion}</p>
+                              <button id="btn12_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn12").click(() => { 
+  $("#div12").toggle("slow");
+});
+
+$("#btn12_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Cry Macho</u></strong>',
+      html:
+        '<iframe width="350" height="315" src="https://www.youtube.com/embed/JVc8SI5CAKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer Viejos
+
+$("#viejosInfo").append('<button id="btn13" class="btn">Mas Info!</button>');
+$("#viejosInfo").prepend(`<div id="div13" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[12].precio}</h4>
+                              <p> Genero: ${nuevasPelis[12].genero}</p>
+                              <p> Duracion: ${nuevasPelis[12].duracion}</p>
+                              <button id="btn13_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn13").click(() => { 
+  $("#div13").toggle("slow");
+});
+
+$("#btn13_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Viejos</u></strong>',
+      html:
+        '<iframe width="350" height="315" src="https://www.youtube.com/embed/Yv3UERl1DA0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+
+//Boton mas info y trailer Reminiscencia
+
+$("#remiInfo").append('<button id="btn14" class="btn">Mas Info!</button>');
+$("#remiInfo").prepend(`<div id="div14" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[13].precio}</h4>
+                              <p> Genero: ${nuevasPelis[13].genero}</p>
+                              <p> Duracion: ${nuevasPelis[13].duracion}</p>
+                              <button id="btn14_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn14").click(() => { 
+  $("#div14").toggle("slow");
+});
+
+$("#btn14_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Reminiscencia</u></strong>',
+      html:
+        '<iframe width="350" height="315" src="https://www.youtube.com/embed/_BggT--yxf0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+  })
+});
+
+
+//Boton mas info y trailer Venom
+
+$("#venomInfo").append('<button id="btn15" class="btn">Mas Info!</button>');
+$("#venomInfo").prepend(`<div id="div15" style="display: none">
+                              <h4 class="item-price">Precio: $ ${nuevasPelis[14].precio}</h4>
+                              <p> Genero: ${nuevasPelis[14].genero}</p>
+                              <p> Duracion: ${nuevasPelis[14].duracion}</p>
+                              <button id="btn15_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn15").click(() => { 
+  $("#div15").toggle("slow");
+});
+
+$("#btn15_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Venom</u></strong>',
+      html:
+        '<iframe width="350" height="315" src="https://www.youtube.com/embed/-FmWuCgJmxo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+  
+  })
+});
+
+
+
+//class constructora de juegos
+
+class Juego {
+  constructor(nombre, genero, precio) {
+      this.nombre = nombre;
+      this.genero = genero;
+      this.precio = parseFloat(precio);
+  }
+  
+  
+}
+
+
+
+//array de juegos
+
+const nuevosJuegos = [];
+nuevosJuegos.push (new Juego("Far Cry 5", "accion", 1500));
+nuevosJuegos.push (new Juego("Assassin´s Creed Odyssey", "aventura", 1700));
+nuevosJuegos.push (new Juego("Fallout 4", "Supervivencia", 1350));
+nuevosJuegos.push (new Juego("Cyberpunk 2077", "accion/aventura", 1350));
+nuevosJuegos.push (new Juego("Diablo II", "Terror", 1325));
+nuevosJuegos.push (new Juego("Residen Evil Village", "Terror/Supervivencia", 1450));
+nuevosJuegos.push (new Juego("Fifa 22", "Futbol", 1500));
+nuevosJuegos.push (new Juego("Mortal Kombat 11", "Lucha", 1750));
+nuevosJuegos.push (new Juego("SW JEDI Fallen Order", "aventura", 1250));
+nuevosJuegos.push (new Juego("Forza Horizonz 5", "Carreras", 1500));
+nuevosJuegos.push (new Juego("COD Vanguard", "Guerra", 1320));
+nuevosJuegos.push (new Juego("Red Dead Redepmtion 2", "Aventura/Western", 1780));
+nuevosJuegos.push (new Juego("Skyrim", "Aventura", 1600));
+nuevosJuegos.push (new Juego("GTA V", "Accion", 1525));
+
+
+const enJSONjuegos = JSON.stringify(nuevosJuegos);
+localStorage.setItem("nuevosJuegos", enJSONjuegos);
+
+
+for (i=0 ; i< nuevosJuegos.length; i++) {
+  nuevosJuegos[i]
+  
+}

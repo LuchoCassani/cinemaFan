@@ -25,7 +25,7 @@
         <header id="encabezado" class="container">
             <div class="row container">
                 <div class="col-2 logo container-fluid">
-                    <img src="img/logo/cinemaFans.png" alt="logo de cinema fans">
+                    <img id="logoCinema" src="img/logo/cinemaFans.png" alt="logo de cinema fans">
                 </div>
                 <div class="col-9 menu ">
                     <nav class="navbar navbar-expand-lg ">
@@ -158,9 +158,9 @@
                                                 <h3 id="blackWidow" class="item-title">Black Widow</h3>
                                                 <img class="item-image imgBlackWidow" src="https://lumiere-a.akamaihd.net/v1/images/blueb_007d_g_spa-ar_70x100_43a5cf52.jpeg" alt="imagen black widow">
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000 </h4>
+                                                <div id="bwInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -169,22 +169,20 @@
                                                 <h3 class="item-title">Blackpink</h3>
                                                 <img class="item-image imgBlackPink" src="https://pics.filmaffinity.com/Blackpink_The_Movie-147705164-large.jpg" alt="imagen black blackPink" >
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000</h4>
+                                                <div id="bpInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                                                 </div>
                                             </div>
                                         </div>
                                     
-                
+              
                                     
                                         <div class="col pelis_juegos">
                                             <div class="item contenidoCard">
-                                                <h3 class="item-title">cruella</h3>
+                                                <h3 class="item-title">Cruella</h3>
                                                 <img class="item-image imgCruella" src="https://images.clarin.com/2021/02/16/el-poster-de-cruella-por___hNE6NYG-f_720x0__1.jpg" alt="imagen cruella">
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000</h4>
+                                                <div id="cruellaInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                                                 </div>
                                             </div>
@@ -194,8 +192,7 @@
                                                 <h3 class="item-title">Escuadron Suicida</h3>
                                                 <img class="item-image imgSuicida" src="https://static.cinemarkhoyts.com.ar/Images/Posters/2cebbbfafc0f5bf3eb85c37b65e338fb.jpg?v=02092021" alt="imagen escuadron suicida">
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000</h4>
+                                                <div id="esInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                                                 </div>
                                             </div>
@@ -207,8 +204,7 @@
                                                 <h3 class="item-title">El Padre</h3>
                                                 <img class="item-image imgPadre" src="https://static.cinemarkhoyts.com.ar/Images/Posters/d8decde45dc42d04e916e1f0a0cf08ae.jpg?v=02092021" alt="imagen de el padre">
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000</h4>
+                                                <div id="padreInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                                                 </div>
                                             </div>
@@ -218,8 +214,7 @@
                                                 <h3 class="item-title">Fre Guy</h3>
                                                 <img class="item-image imgFreeGuy" src="https://static.cinemarkhoyts.com.ar/Images/Posters/8002446a2abc9dbace2d8b7bd2359159.jpg?v=02092021" alt="imagen de free guy">
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000</h4>
+                                                <div id="fgInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                                                 </div>
                                             </div>
@@ -231,8 +226,7 @@
                                                 <h3 class="item-title">Rapido y Furioso 9</h3>
                                                 <img class="item-image imgRyF9" src="https://static.cinemarkhoyts.com.ar/Images/Posters/10c126e16f504bb8a9715415a35c23b9.jpg?v=02092021" alt="imagen de rapido y furioso 9">
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000</h4>
+                                                <div id="rYfInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                                                 </div>
                                             </div>
@@ -242,21 +236,17 @@
                                                 <h3 class="item-title">jungleCruise</h3>
                                                 <img class="item-image imgJungleCruise" src="img/pelis/jungleCruise.png" alt="imagen de jungle cruise">
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000</h4>
+                                                <div id="jcInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                                                 </div>
                                             </div>
                                         </div>
-                                    
-                                    
                                         <div class="col pelis_juegos">
                                             <div class="item contenidoCard">
                                                 <h3 class="item-title">La Purga</h3>
                                                 <img class="item-image imgLaPurga"  src="img/pelis/laPurga.png" alt="imagen de la purga">
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000</h4>
+                                                <div id="purgaInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                                                 </div>
                                             </div>
@@ -266,32 +256,29 @@
                                                 <h3 class="item-title">Space Jam</h3>
                                                 <img class="item-image imgSapceJam" src="https://static.cinemarkhoyts.com.ar/Images/Posters/4a083c21e579b8e5dd9eef898242cbe3.jpg?v=02092021" alt="imagen de space jam">
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000</h4>
+                                                <div id="sjInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                                                 </div>
                                             </div>
                                         </div>
                                    
                                     
-                                        <div class="col pelis_juegos">
+                                        <div  class="col pelis_juegos">
                                             <div class="item contenidoCard">
                                                 <h3 class="item-title">Candyman</h3>
                                                 <img class="item-image imgCandyMan" src="https://static.cinemarkhoyts.com.ar/Images/Posters/3390c371a5a2049462d98634dd0c2a20.jpg?v=02092021" alt="imagen de candy man">
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000</h4>
+                                                <div id="candyInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col pelis_juegos">
-                                            <div class="item contenidoCard">
+                                            <div  class="item contenidoCard">
                                                 <h3 class="item-title">Cry Macho</h3>
                                                 <img class="item-image imgCryMacho" src="https://static.cinemarkhoyts.com.ar/Images/ComingSoon/200x285/599.jpg?v=02092021" alt="imagen de cry macho">
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000</h4>
+                                                <div id="cmInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                                                 </div>
                                             </div>
@@ -303,8 +290,7 @@
                                                 <h3 class="item-title">Viejos</h3>
                                                 <img class="item-image imgViejos" src="https://static.cinemarkhoyts.com.ar/Images/Posters/15d0f0235becf63ef785047ea3f061b8.jpg?v=02092021" alt="imagen de viejos">
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000</h4>
+                                                <div id="viejosInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                                                 </div>
                                             </div>
@@ -314,8 +300,7 @@
                                                 <h3 class="item-title">Reminiscencia</h3>
                                                 <img class="item-image imgReminiscencia" src="img/pelis/reminiscencia.jpg" alt="imagen de reminiscencia">
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000</h4>
+                                                <div id="remiInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                                                 </div>
                                             </div>
@@ -327,8 +312,7 @@
                                                 <h3 class="item-title">Venom</h3>
                                                 <img class="item-image imgVenom" src="https://static.cinemarkhoyts.com.ar/Images/ComingSoon/200x285/587.jpg?v=02092021" alt="imagen de venom">
                 
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$1.000</h4>
+                                                <div id="venomInfo" class="item-details">
                                                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                                                 </div>
                                             </div>
@@ -382,7 +366,7 @@
                                     <div class="contenidoCard"> 
                                             <h5 >Far Cry 5</h5>
                                             <p >$1.000 </p>
-                                            <a  class="btn "id="btnCompra">Agregar al carrito</a>     
+                                            <a  class=" btn-FC"id="btnCompra">Agregar al carrito</a>     
                                         </div>
                                 </div>
                                 <div class="pelis_juegos col  "><img src="https://store-images.s-microsoft.com/image/apps.51903.71972716530068101.ccdcadf1-1d2a-49f2-9c37-0b0a27e5a53c.08e06d2d-1104-4c80-b879-91facf8348d5" alt="imagen black blackPink">
