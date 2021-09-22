@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "nombre": "Farcry5",
+    "genero": "accion",
+    "descripcion": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "id": 2,
+    "nombre": "Assassin´s Creed ODYSSEY",
+    "genero": "aventura",
+    "Descripcion": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "id": 3,
+    "nombre": "Fallout 4",
+    "genero": "supervivencia",
+    "Descripcion": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "id": 4,
+    "nombre": "Cyberpunk 2077",
+    "genero": "ciencia ficcion",
+    "Descripcion": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  }
+  
+]

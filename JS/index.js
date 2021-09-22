@@ -873,3 +873,35 @@ for (i=0 ; i< nuevosJuegos.length; i++) {
   nuevosJuegos[i]
   
 }
+
+
+//Escuchamos el evento click del botón agregado
+$("#btn111").click(() => { 
+  $.getJSON("../JSON/juegos.json", function (respuesta, estado) {
+      if(estado === "success"){
+        let misDatos = respuesta;
+        for (const dato of misDatos) {
+          $("#listaStock").prepend(`<div id="div111">
+                                        
+                                          <li id="listaJuegos">
+                                              <h3>${dato.nombre}</h3>
+                                              <p> ${dato.genero}</p> 
+                                          </li>
+                                      </div>`)
+          }  
+        }
+      }
+    );
+  }
+);
+
+$("#btn222").click(function (e) { 
+  e.preventDefault();
+  $("#listaStock").fadeOut("slow");
+  
+});
+$("#btn333").click(function (e) { 
+  e.preventDefault();
+  $("#listaStock").toggle("slow");
+  
+});
