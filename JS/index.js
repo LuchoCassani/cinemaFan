@@ -217,7 +217,7 @@ $(".imgVenom").hover(function () {
   }
 );
 
-
+// Carrito Compras
 const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
 addToShoppingCartButtons.forEach((addToCartButton) => {
   addToCartButton.addEventListener('click', addToCartClicked);
@@ -307,7 +307,7 @@ function updateShoppingCartTotal() {
       '.shoppingCartItemPrice'
     );
     const shoppingCartItemPrice = Number(
-      shoppingCartItemPriceElement.textContent.replace('€', '')
+      shoppingCartItemPriceElement.textContent.replace('$', '')
     );
     const shoppingCartItemQuantityElement = shoppingCartItem.querySelector(
       '.shoppingCartItemQuantity'
@@ -317,7 +317,7 @@ function updateShoppingCartTotal() {
     );
     total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
   });
-  shoppingCartTotal.innerHTML = `${total.toFixed(2)}$`;
+  shoppingCartTotal.innerHTML = `$${total.toFixed(2)}`;
 }
 
 function removeShoppingCartItem(event) {
@@ -392,7 +392,7 @@ $("#btn2").click(function(){
 
 $("#bwInfo").append('<button id="btn1" class="btn">Mas info!</button>');
 $("#bwInfo").prepend(`<div id="div1" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[0].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[0].genero}</p>
                               <p> Duracion: ${nuevasPelis[0].duracion}</p>
                               <button id="btn1_trailer" type="button">Trailer</button>
@@ -421,7 +421,7 @@ $("#btn1_trailer").click(function (e) {
 
 $("#bpInfo").append('<button id="btn2" class="btn">Mas info!</button>');
 $("#bpInfo").prepend(`<div id="div2" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[1].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[1].genero}</p>
                               <p> Duracion: ${nuevasPelis[1].duracion}</p>
                               <button id="btn2_trailer" type="button">Trailer</button>
@@ -450,7 +450,7 @@ $("#btn2_trailer").click(function (e) {
 
 $("#cruellaInfo").append('<button id="btn3" class="btn">Mas info!</button>');
 $("#cruellaInfo").prepend(`<div id="div3" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[2].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[2].genero}</p>
                               <p> Duracion: ${nuevasPelis[2].duracion}</p>  
                               <button id="btn3_trailer" type="button">Trailer</button>
@@ -479,7 +479,7 @@ $("#btn3_trailer").click(function (e) {
 
 $("#esInfo").append('<button id="btn4" class="btn">Mas info!</button>');
 $("#esInfo").prepend(`<div id="div4" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[3].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[3].genero}</p>
                               <p> Duracion: ${nuevasPelis[3].duracion}</p>
                               <button id="btn4_trailer" type="button">Trailer</button>
@@ -508,7 +508,7 @@ $("#btn4_trailer").click(function (e) {
 
 $("#padreInfo").append('<button id="btn5" class="btn">Mas info!</button>');
 $("#padreInfo").prepend(`<div id="div5" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[4].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[4].genero}</p>
                               <p> Duracion: ${nuevasPelis[4].duracion}</p>
                               <button id="btn5_trailer" type="button">Trailer</button>
@@ -536,7 +536,7 @@ $("#btn5_trailer").click(function (e) {
 
 $("#fgInfo").append('<button id="btn6" class="btn">Mas info!</button>');
 $("#fgInfo").prepend(`<div id="div6" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[5].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[5].genero}</p>
                               <p> Duracion: ${nuevasPelis[5].duracion}</p>
                               <button id="btn6_trailer" type="button">Trailer</button> 
@@ -564,7 +564,7 @@ $("#btn6_trailer").click(function (e) {
 
 $("#rYfInfo").append('<button id="btn7" class="btn">Mas info!</button>');
 $("#rYfInfo").prepend(`<div id="div7" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[6].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[6].genero}</p>
                               <p> Duracion: ${nuevasPelis[6].duracion}</p> 
                               <button id="btn7_trailer" type="button">Trailer</button> 
@@ -594,7 +594,7 @@ $("#btn7_trailer").click(function (e) {
 
 $("#jcInfo").append('<button id="btn8" class="btn">Mas info!</button>');
 $("#jcInfo").prepend(`<div id="div8" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[7].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[7].genero}</p>
                               <p> Duracion: ${nuevasPelis[7].duracion}</p>
                               <button id="btn8_trailer" type="button">Trailer</button>
@@ -623,7 +623,7 @@ $("#btn8_trailer").click(function (e) {
 
 $("#purgaInfo").append('<button id="btn9" class="btn">Mas Info!</button>');
 $("#purgaInfo").prepend(`<div id="div9" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[8].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[8].genero}</p>
                               <p> Duracion: ${nuevasPelis[8].duracion}</p>
                               <button id="btn9_trailer" type="button">Trailer</button>
@@ -653,7 +653,7 @@ $("#btn9_trailer").click(function (e) {
 
 $("#sjInfo").append('<button id="btn10" class="btn">Mas Info!</button>');
 $("#sjInfo").prepend(`<div id="div10" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[9].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[9].genero}</p>
                               <p> Duracion: ${nuevasPelis[9].duracion}</p>
                               <button id="btn10_trailer" type="button">Trailer</button>
@@ -685,7 +685,7 @@ $("#btn10_trailer").click(function (e) {
 
 $("#candyInfo").append('<button id="btn11" class="btn">Mas Info!</button>');
 $("#candyInfo").prepend(`<div id="div11" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[10].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[10].genero}</p>
                               <p> Duracion: ${nuevasPelis[10].duracion}</p>
                               <button id="btn11_trailer" type="button">Trailer</button>
@@ -716,7 +716,7 @@ $("#btn11_trailer").click(function (e) {
 
 $("#cmInfo").append('<button id="btn12" class="btn">Mas Info!</button>');
 $("#cmInfo").prepend(`<div id="div12" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[11].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[11].genero}</p>
                               <p> Duracion: ${nuevasPelis[11].duracion}</p>
                               <button id="btn12_trailer" type="button">Trailer</button>
@@ -745,7 +745,7 @@ $("#btn12_trailer").click(function (e) {
 
 $("#viejosInfo").append('<button id="btn13" class="btn">Mas Info!</button>');
 $("#viejosInfo").prepend(`<div id="div13" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[12].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[12].genero}</p>
                               <p> Duracion: ${nuevasPelis[12].duracion}</p>
                               <button id="btn13_trailer" type="button">Trailer</button>
@@ -775,7 +775,7 @@ $("#btn13_trailer").click(function (e) {
 
 $("#remiInfo").append('<button id="btn14" class="btn">Mas Info!</button>');
 $("#remiInfo").prepend(`<div id="div14" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[13].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[13].genero}</p>
                               <p> Duracion: ${nuevasPelis[13].duracion}</p>
                               <button id="btn14_trailer" type="button">Trailer</button>
@@ -805,7 +805,7 @@ $("#btn14_trailer").click(function (e) {
 
 $("#venomInfo").append('<button id="btn15" class="btn">Mas Info!</button>');
 $("#venomInfo").prepend(`<div id="div15" style="display: none">
-                              <h4 class="item-price">Precio: $ ${nuevasPelis[14].precio}</h4>
+                              
                               <p> Genero: ${nuevasPelis[14].genero}</p>
                               <p> Duracion: ${nuevasPelis[14].duracion}</p>
                               <button id="btn15_trailer" type="button">Trailer</button>
@@ -873,3 +873,32 @@ for (i=0 ; i< nuevosJuegos.length; i++) {
   nuevosJuegos[i]
   
 }
+
+//Boton mas info y trailer Farcry 5
+
+$("#FarCryInfo").append('<button id="btn16" class="btn">Mas info!</button>');
+$("#FarCryInfo").prepend(`<div id="div16" style="display: none">
+                              
+                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p> Duracion: ${nuevosJuegos[0].duracion}</p>
+                              <button id="btn16_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn16").click(() => { 
+  $("#div16").toggle("slow");
+});
+
+$("#btn16_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="https://www.youtube.com/embed/4hVME3O9wf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
