@@ -876,11 +876,9 @@ for (i=0 ; i< nuevosJuegos.length; i++) {
 
 //Boton mas info y trailer Farcry 5
 
-$("#FarCryInfo").append('<button id="btn16" class="btn">Mas info!</button>');
-$("#FarCryInfo").prepend(`<div id="div16" style="display: none">
-                              
+$("#farCryInfo").append('<button id="btn16" class="btn">Mas info!</button>');
+$("#farCryInfo").prepend(`<div id="div16" style="display: none">
                               <p> Genero: ${nuevosJuegos[0].genero}</p>
-                              <p> Duracion: ${nuevosJuegos[0].duracion}</p>
                               <button id="btn16_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -894,6 +892,384 @@ $("#btn16_trailer").click(function (e) {
       title: '<strong><u>Far Cry 5</u></strong>',
       html:
         '<iframe width="400" height="315" src="https://www.youtube.com/embed/4hVME3O9wf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer assassins
+
+$("#acInfo").append('<button id="btn17" class="btn">Mas info!</button>');
+$("#acInfo").prepend(`<div id="div17" style="display: none">
+                              <p> Genero: ${nuevosJuegos[1].genero}</p>
+                              <button id="btn17_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn17").click(() => { 
+  $("#div17").toggle("slow");
+});
+
+$("#btn17_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="https://www.youtube.com/embed/Asy_p4xStbk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer fallout
+
+$("#FalloutInfo").append('<button id="btn18" class="btn">Mas info!</button>');
+$("#FalloutInfo").prepend(`<div id="div18" style="display: none">
+                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <button id="btn18_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn18").click(() => { 
+  $("#div18").toggle("slow");
+});
+
+$("#btn18_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="https://www.youtube.com/embed/WbVfMVBTR7I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer cyberpunk
+
+$("#cyberInfo").append('<button id="btn19" class="btn">Mas info!</button>');
+$("#cyberInfo").prepend(`<div id="div19" style="display: none">
+                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <button id="btn19_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn19").click(() => { 
+  $("#div19").toggle("slow");
+});
+
+$("#btn19_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="https://www.youtube.com/embed/VhM3NRu23Sk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer diablo 2
+
+$("#diabloInfo").append('<button id="btn20" class="btn">Mas info!</button>');
+$("#diabloInfo").prepend(`<div id="div20" style="display: none">
+                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <button id="btn20_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn20").click(() => { 
+  $("#div20").toggle("slow");
+});
+
+$("#btn20_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="<iframe width="560" height="315" src="https://www.youtube.com/embed/zenPx6HIjAo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer resident evil
+
+$("#residentInfo").append('<button id="btn21" class="btn">Mas info!</button>');
+$("#residentInfo").prepend(`<div id="div21" style="display: none">
+                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <button id="btn21_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn21").click(() => { 
+  $("#div21").toggle("slow");
+});
+
+$("#btn21_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="https://www.youtube.com/embed/YGQ_YtpTwdc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer fifa22
+
+$("#fifatInfo").append('<button id="btn22" class="btn">Mas info!</button>');
+$("#fifatInfo").prepend(`<div id="div22" style="display: none">
+                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <button id="btn22_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn22").click(() => { 
+  $("#div22").toggle("slow");
+});
+
+$("#btn22_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="https://www.youtube.com/embed/o1igaMv46SY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer MK
+
+$("#mortalInfo").append('<button id="btn23" class="btn">Mas info!</button>');
+$("#mortalInfo").prepend(`<div id="div23" style="display: none">
+                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <button id="btn23_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn23").click(() => { 
+  $("#div23").toggle("slow");
+});
+
+$("#btn23_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="https://www.youtube.com/embed/OEQsQqkEKMA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer starwars
+
+$("#starWarsInfo").append('<button id="btn24" class="btn">Mas info!</button>');
+$("#starWarsInfo").prepend(`<div id="div24" style="display: none">
+                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <button id="btn24_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn24").click(() => { 
+  $("#div24").toggle("slow");
+});
+
+$("#btn24_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="https://www.youtube.com/embed/0GLbwkfhYZk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer forza
+
+$("#forzalInfo").append('<button id="btn25" class="btn">Mas info!</button>');
+$("#forzalInfo").prepend(`<div id="div25" style="display: none">
+                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <button id="btn25_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn25").click(() => { 
+  $("#div25").toggle("slow");
+});
+
+$("#btn25_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="https://www.youtube.com/embed/FYH9n37B7Yw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer nba
+
+$("#nbalInfo").append('<button id="btn26" class="btn">Mas info!</button>');
+$("#nbalInfo").prepend(`<div id="div26" style="display: none">
+                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <button id="btn26_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn26").click(() => { 
+  $("#div26").toggle("slow");
+});
+
+$("#btn26_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="https://www.youtube.com/embed/OcUzwnA569M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer COD
+
+$("#codlInfo").append('<button id="btn27" class="btn">Mas info!</button>');
+$("#codlInfo").prepend(`<div id="div27" style="display: none">
+                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <button id="btn27_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn27").click(() => { 
+  $("#div27").toggle("slow");
+});
+
+$("#btn27_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="https://www.youtube.com/embed/OQ1CwPhE8KQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer red dead redemption 2
+
+$("#redInfo").append('<button id="btn28" class="btn">Mas info!</button>');
+$("#redInfo").prepend(`<div id="div28" style="display: none">
+                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <button id="btn27_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn28").click(() => { 
+  $("#div28").toggle("slow");
+});
+
+$("#btn27_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="https://www.youtube.com/embed/eaW0tYpxyp0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer skyrim 2
+
+$("#elderInfo").append('<button id="btn29" class="btn">Mas info!</button>');
+$("#elderInfo").prepend(`<div id="div29" style="display: none">
+                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <button id="btn29_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn29").click(() => { 
+  $("#div29").toggle("slow");
+});
+
+$("#btn29_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="https://www.youtube.com/embed/JSRtYpNRoN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Lo quiero!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      
+    })
+});
+
+//Boton mas info y trailer gta
+
+$("#gtaInfo").append('<button id="btn30" class="btn">Mas info!</button>');
+$("#gtaInfo").prepend(`<div id="div30" style="display: none">
+                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <button id="btn30_trailer" type="button">Trailer</button>
+                              </div>`);
+                              
+$("#btn30").click(() => { 
+  $("#div30").toggle("slow");
+});
+
+$("#btn30_trailer").click(function (e) { 
+  e.preventDefault();
+    Swal.fire({
+      title: '<strong><u>Far Cry 5</u></strong>',
+      html:
+        '<iframe width="400" height="315" src="https://www.youtube.com/embed/QkkoHAzjnUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
       showCloseButton: true,
       focusConfirm: false,
       confirmButtonText:
