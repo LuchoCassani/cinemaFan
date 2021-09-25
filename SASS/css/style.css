@@ -93,7 +93,6 @@
   justify-content: center;
   align-items: center;
   border: solid 1px blueviolet;
-  width: 75%;
 }
 
 .presentacion {
@@ -104,6 +103,7 @@
   margin: 0 auto;
   font-size: 2rem;
   font-family: "Anton", sans-serif;
+  color: white;
 }
 
 .carousel {
@@ -216,6 +216,24 @@ ol li {
 }
 .contentSearch .contentTable table tbody tr td a:hover {
   background-color: yellowgreen;
+}
+
+.titulos {
+  color: white;
+}
+
+.imgCarrito {
+  width: 17rem;
+  height: 22rem;
+  padding: 2rem;
+  margin: 0;
+}
+
+.nombreJuegoPeli {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 body {

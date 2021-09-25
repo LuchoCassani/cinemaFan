@@ -261,27 +261,29 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
 
   const shoppingCartRow = document.createElement('div');
   const shoppingCartContent = `
-  <div class="row shoppingCartItem container-fluid">
-        <div class="col-6">
-            <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3 container-fluid">
-                <img src=${itemImage} class="shopping-cart-image">
-                <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-5 mb-0">${itemTitle}</h6>
+  <div class="container shoppingCartItem">
+        
+        <div class="row shopping-cart-item">
+                <div class="col-4 d-flex"><img src=${itemImage} class="shopping-cart-image imgCarrito "></div>
+                <div class="col-2 d-flex justify-content-center">
+                    <h6 class="shopping-cart-item-title shoppingCartItemTitle titulos nombreJuegoPeli">${itemTitle}</h6>
+                </div>
+            <div class="col-2 shopping-cart-price titulos d-flex justify-content-center"> 
+                <p class="item-price shoppingCartItemPrice nombreJuegoPeli"> ${itemPrice}</p>
+                </div>
+            <div class="col-4 d-flex justify-content-center flex-column">
+            <div  d-flex> 
+                <div class="shopping-cart-quantity d-flex">
+                    <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
+                        value="1">
+                    <button class="btn btn-danger buttonDelete d-flex  " type="button">X</button>
+                </div>
+              </div>  
             </div>
         </div>
-        <div class="col-2">
-            <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                <p class="item-price mb-0 shoppingCartItemPrice">${itemPrice}</p>
-            </div>
-        </div>
-        <div class="col-4">
-            <div
-                class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
-                <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
-                    value="1">
-                <button class="btn btn-danger buttonDelete" type="button">X</button>
-            </div>
-        </div>
-    </div>`;
+        
+
+</div>`;
   shoppingCartRow.innerHTML = shoppingCartContent;
   shoppingCartItemsContainer.append(shoppingCartRow);
 
@@ -390,7 +392,7 @@ $("#btn2").click(function(){
 //Boton mas info y trailer Blackwidow
 
 
-$("#bwInfo").append('<button id="btn1" class="btn">Mas info!</button>');
+$("#bwInfo").append('<button id="btn1" class="btn titulos">Mas info!</button>');
 $("#bwInfo").prepend(`<div id="div1" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[0].genero}</p>
@@ -419,7 +421,9 @@ $("#btn1_trailer").click(function (e) {
 
 //Boton mas info y trailer Blackpink
 
-$("#bpInfo").append('<button id="btn2" class="btn">Mas info!</button>');
+
+
+$("#bpInfo").append('<button id="btn2" class="btn titulos">Mas info!</button>');
 $("#bpInfo").prepend(`<div id="div2" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[1].genero}</p>
@@ -448,7 +452,7 @@ $("#btn2_trailer").click(function (e) {
 
 //Boton mas info y trailer Cruella
 
-$("#cruellaInfo").append('<button id="btn3" class="btn">Mas info!</button>');
+$("#cruellaInfo").append('<button id="btn3" class="btn titulos">Mas info!</button>');
 $("#cruellaInfo").prepend(`<div id="div3" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[2].genero}</p>
@@ -477,7 +481,7 @@ $("#btn3_trailer").click(function (e) {
 
 //Boton mas info y trailer Esc Suicida
 
-$("#esInfo").append('<button id="btn4" class="btn">Mas info!</button>');
+$("#esInfo").append('<button id="btn4" class="btn titulos">Mas info!</button>');
 $("#esInfo").prepend(`<div id="div4" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[3].genero}</p>
@@ -506,7 +510,7 @@ $("#btn4_trailer").click(function (e) {
 
 //Boton mas info y trailer Padre
 
-$("#padreInfo").append('<button id="btn5" class="btn">Mas info!</button>');
+$("#padreInfo").append('<button id="btn5" class="btn titulos">Mas info!</button>');
 $("#padreInfo").prepend(`<div id="div5" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[4].genero}</p>
@@ -534,7 +538,7 @@ $("#btn5_trailer").click(function (e) {
 });
 //Boton mas info y trailer Freeguy
 
-$("#fgInfo").append('<button id="btn6" class="btn">Mas info!</button>');
+$("#fgInfo").append('<button id="btn6" class="btn titulos">Mas info!</button>');
 $("#fgInfo").prepend(`<div id="div6" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[5].genero}</p>
@@ -562,7 +566,7 @@ $("#btn6_trailer").click(function (e) {
 });
 //Boton mas info y trailer RyF9
 
-$("#rYfInfo").append('<button id="btn7" class="btn">Mas info!</button>');
+$("#rYfInfo").append('<button id="btn7" class="btn titulos">Mas info!</button>');
 $("#rYfInfo").prepend(`<div id="div7" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[6].genero}</p>
@@ -592,7 +596,7 @@ $("#btn7_trailer").click(function (e) {
 //Boton mas info y trailer Jungle Cruise
 
 
-$("#jcInfo").append('<button id="btn8" class="btn">Mas info!</button>');
+$("#jcInfo").append('<button id="btn8" class="btn titulos">Mas info!</button>');
 $("#jcInfo").prepend(`<div id="div8" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[7].genero}</p>
@@ -621,7 +625,7 @@ $("#btn8_trailer").click(function (e) {
 
 //Boton mas info y trailer Purga
 
-$("#purgaInfo").append('<button id="btn9" class="btn">Mas Info!</button>');
+$("#purgaInfo").append('<button id="btn9" class="btn titulos">Mas Info!</button>');
 $("#purgaInfo").prepend(`<div id="div9" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[8].genero}</p>
@@ -651,7 +655,7 @@ $("#btn9_trailer").click(function (e) {
 //Boton mas info y trailer Space Jam
 
 
-$("#sjInfo").append('<button id="btn10" class="btn">Mas Info!</button>');
+$("#sjInfo").append('<button id="btn10" class="btn titulos">Mas Info!</button>');
 $("#sjInfo").prepend(`<div id="div10" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[9].genero}</p>
@@ -683,7 +687,7 @@ $("#btn10_trailer").click(function (e) {
 //Boton mas info y trailer Candyman
 
 
-$("#candyInfo").append('<button id="btn11" class="btn">Mas Info!</button>');
+$("#candyInfo").append('<button id="btn11" class="btn titulos">Mas Info!</button>');
 $("#candyInfo").prepend(`<div id="div11" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[10].genero}</p>
@@ -714,7 +718,7 @@ $("#btn11_trailer").click(function (e) {
 
 //Boton mas info y trailer Cry Macho
 
-$("#cmInfo").append('<button id="btn12" class="btn">Mas Info!</button>');
+$("#cmInfo").append('<button id="btn12" class="btn titulos">Mas Info!</button>');
 $("#cmInfo").prepend(`<div id="div12" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[11].genero}</p>
@@ -743,7 +747,7 @@ $("#btn12_trailer").click(function (e) {
 
 //Boton mas info y trailer Viejos
 
-$("#viejosInfo").append('<button id="btn13" class="btn">Mas Info!</button>');
+$("#viejosInfo").append('<button id="btn13" class="btn titulos">Mas Info!</button>');
 $("#viejosInfo").prepend(`<div id="div13" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[12].genero}</p>
@@ -773,7 +777,7 @@ $("#btn13_trailer").click(function (e) {
 
 //Boton mas info y trailer Reminiscencia
 
-$("#remiInfo").append('<button id="btn14" class="btn">Mas Info!</button>');
+$("#remiInfo").append('<button id="btn14" class="btn titulos">Mas Info!</button>');
 $("#remiInfo").prepend(`<div id="div14" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[13].genero}</p>
@@ -803,7 +807,7 @@ $("#btn14_trailer").click(function (e) {
 
 //Boton mas info y trailer Venom
 
-$("#venomInfo").append('<button id="btn15" class="btn">Mas Info!</button>');
+$("#venomInfo").append('<button id="btn15" class="btn titulos">Mas Info!</button>');
 $("#venomInfo").prepend(`<div id="div15" style="display: none">
                               
                               <p> Genero: ${nuevasPelis[14].genero}</p>
@@ -876,9 +880,9 @@ for (i=0 ; i< nuevosJuegos.length; i++) {
 
 //Boton mas info y trailer Farcry 5
 
-$("#farCryInfo").append('<button id="btn16" class="btn">Mas info!</button>');
+$("#farCryInfo").append('<button id="btn16" class="btn titulos">Mas info!</button>');
 $("#farCryInfo").prepend(`<div id="div16" style="display: none">
-                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[0].genero}</p>
                               <button id="btn16_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -903,9 +907,9 @@ $("#btn16_trailer").click(function (e) {
 
 //Boton mas info y trailer assassins
 
-$("#acInfo").append('<button id="btn17" class="btn">Mas info!</button>');
+$("#acInfo").append('<button id="btn17" class="btn titulos">Mas info!</button>');
 $("#acInfo").prepend(`<div id="div17" style="display: none">
-                              <p> Genero: ${nuevosJuegos[1].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[1].genero}</p>
                               <button id="btn17_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -930,9 +934,9 @@ $("#btn17_trailer").click(function (e) {
 
 //Boton mas info y trailer fallout
 
-$("#FalloutInfo").append('<button id="btn18" class="btn">Mas info!</button>');
+$("#FalloutInfo").append('<button id="btn18" class="btn titulos">Mas info!</button>');
 $("#FalloutInfo").prepend(`<div id="div18" style="display: none">
-                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[0].genero}</p>
                               <button id="btn18_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -957,9 +961,9 @@ $("#btn18_trailer").click(function (e) {
 
 //Boton mas info y trailer cyberpunk
 
-$("#cyberInfo").append('<button id="btn19" class="btn">Mas info!</button>');
+$("#cyberInfo").append('<button id="btn19" class="btn titulos">Mas info!</button>');
 $("#cyberInfo").prepend(`<div id="div19" style="display: none">
-                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[0].genero}</p>
                               <button id="btn19_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -984,9 +988,9 @@ $("#btn19_trailer").click(function (e) {
 
 //Boton mas info y trailer diablo 2
 
-$("#diabloInfo").append('<button id="btn20" class="btn">Mas info!</button>');
+$("#diabloInfo").append('<button id="btn20" class="btn titulos">Mas info!</button>');
 $("#diabloInfo").prepend(`<div id="div20" style="display: none">
-                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[0].genero}</p>
                               <button id="btn20_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -1011,9 +1015,9 @@ $("#btn20_trailer").click(function (e) {
 
 //Boton mas info y trailer resident evil
 
-$("#residentInfo").append('<button id="btn21" class="btn">Mas info!</button>');
+$("#residentInfo").append('<button id="btn21" class="btn titulos">Mas info!</button>');
 $("#residentInfo").prepend(`<div id="div21" style="display: none">
-                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[0].genero}</p>
                               <button id="btn21_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -1038,9 +1042,9 @@ $("#btn21_trailer").click(function (e) {
 
 //Boton mas info y trailer fifa22
 
-$("#fifatInfo").append('<button id="btn22" class="btn">Mas info!</button>');
+$("#fifatInfo").append('<button id="btn22" class="btn titulos">Mas info!</button>');
 $("#fifatInfo").prepend(`<div id="div22" style="display: none">
-                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[0].genero}</p>
                               <button id="btn22_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -1065,9 +1069,9 @@ $("#btn22_trailer").click(function (e) {
 
 //Boton mas info y trailer MK
 
-$("#mortalInfo").append('<button id="btn23" class="btn">Mas info!</button>');
+$("#mortalInfo").append('<button id="btn23" class="btn titulos">Mas info!</button>');
 $("#mortalInfo").prepend(`<div id="div23" style="display: none">
-                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[0].genero}</p>
                               <button id="btn23_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -1092,9 +1096,9 @@ $("#btn23_trailer").click(function (e) {
 
 //Boton mas info y trailer starwars
 
-$("#starWarsInfo").append('<button id="btn24" class="btn">Mas info!</button>');
+$("#starWarsInfo").append('<button id="btn24" class="btn titulos">Mas info!</button>');
 $("#starWarsInfo").prepend(`<div id="div24" style="display: none">
-                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[0].genero}</p>
                               <button id="btn24_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -1119,9 +1123,9 @@ $("#btn24_trailer").click(function (e) {
 
 //Boton mas info y trailer forza
 
-$("#forzalInfo").append('<button id="btn25" class="btn">Mas info!</button>');
+$("#forzalInfo").append('<button id="btn25" class="btn titulos">Mas info!</button>');
 $("#forzalInfo").prepend(`<div id="div25" style="display: none">
-                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[0].genero}</p>
                               <button id="btn25_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -1146,9 +1150,9 @@ $("#btn25_trailer").click(function (e) {
 
 //Boton mas info y trailer nba
 
-$("#nbalInfo").append('<button id="btn26" class="btn">Mas info!</button>');
+$("#nbalInfo").append('<button id="btn26" class="btn titulos">Mas info!</button>');
 $("#nbalInfo").prepend(`<div id="div26" style="display: none">
-                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[0].genero}</p>
                               <button id="btn26_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -1173,9 +1177,9 @@ $("#btn26_trailer").click(function (e) {
 
 //Boton mas info y trailer COD
 
-$("#codlInfo").append('<button id="btn27" class="btn">Mas info!</button>');
+$("#codlInfo").append('<button id="btn27" class="btn titulos">Mas info!</button>');
 $("#codlInfo").prepend(`<div id="div27" style="display: none">
-                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[0].genero}</p>
                               <button id="btn27_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -1200,9 +1204,9 @@ $("#btn27_trailer").click(function (e) {
 
 //Boton mas info y trailer red dead redemption 2
 
-$("#redInfo").append('<button id="btn28" class="btn">Mas info!</button>');
+$("#redInfo").append('<button id="btn28" class="btn titulos">Mas info!</button>');
 $("#redInfo").prepend(`<div id="div28" style="display: none">
-                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[0].genero}</p>
                               <button id="btn27_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -1227,9 +1231,9 @@ $("#btn27_trailer").click(function (e) {
 
 //Boton mas info y trailer skyrim 2
 
-$("#elderInfo").append('<button id="btn29" class="btn">Mas info!</button>');
+$("#elderInfo").append('<button id="btn29" class="btn titulos">Mas info!</button>');
 $("#elderInfo").prepend(`<div id="div29" style="display: none">
-                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[0].genero}</p>
                               <button id="btn29_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -1254,9 +1258,9 @@ $("#btn29_trailer").click(function (e) {
 
 //Boton mas info y trailer gta
 
-$("#gtaInfo").append('<button id="btn30" class="btn">Mas info!</button>');
+$("#gtaInfo").append('<button id="btn30" class="btn titulos">Mas info!</button>');
 $("#gtaInfo").prepend(`<div id="div30" style="display: none">
-                              <p> Genero: ${nuevosJuegos[0].genero}</p>
+                              <p class ="titulos"> Genero: ${nuevosJuegos[0].genero}</p>
                               <button id="btn30_trailer" type="button">Trailer</button>
                               </div>`);
                               
@@ -1278,3 +1282,188 @@ $("#btn30_trailer").click(function (e) {
       
     })
 });
+
+// CAmbio de imagenes al pasar el mouse - Juegos
+
+//farCry
+
+$(".imgFarCry").hover(function () {
+  $(this).attr ("src", "https://image.api.playstation.com/cdn/UP0001/CUSA05904_00/mDdyfOGS1Oxix7XwXZ37ymF6Rp8Px0ZR.png?w=440&thumb=false")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.11227.69582963086497758.e1cff2e3-ddf1-42bf-930d-f380ad63f100.38d7bb7c-3e33-471b-b22d-0f0a635832ad")
+    
+  }
+);
+
+//assassin´s
+
+$(".imgAs").hover(function () {
+  $(this).attr ("src", "https://avatarfiles.alphacoders.com/154/thumb-1920-154163.jpg")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.51903.71972716530068101.ccdcadf1-1d2a-49f2-9c37-0b0a27e5a53c.08e06d2d-1104-4c80-b879-91facf8348d5")
+    
+  }
+);
+
+//fallout
+
+$(".imgFallout").hover(function () {
+  $(this).attr ("src", "https://image.api.playstation.com/vulcan/ap/rnd/202009/2419/BWMVfyxONkIAlAJVQd96qPuN.png?w=440&thumb=false")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.43525.65812291288120258.78db0a4c-6279-4de9-b89c-0e62cd3d55c7.8c1aabc2-4501-44a1-a9db-5f0de4dcad0a")
+    
+  }
+);
+
+//Cyberpunk 2077
+
+$(".imgCyberpunk").hover(function () {
+  $(this).attr ("src", "https://www.techpowerup.com/review/cyberpunk-2077-benchmark-test-performance/images/small.png")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.20969.63407868131364914.0f6bcae3-6458-450b-bfc3-7cb0553c6674.93e7c9e8-a2e6-4d89-a002-c1aa2cc7cb2a")
+    
+  }
+);
+
+//Diablo II
+
+$(".imgDiablo").hover(function () {
+  $(this).attr ("src", "https://cdn.discord.me/server/261917f1e5349f4eaf5d0916ca0c695cd077cae9c8ad5eee814cc60c5a556ca5/icon_72bb0aa8617df1c92e465fd6cf91e24b32ba6a8cf10f3a47f1be55adbd361647.jpg")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.27541.14357505034575924.27607c86-9992-48ed-bec3-f49a9af6a5d8.c3d9452f-19db-4fd6-9cfa-b95db18957d4")
+    
+  }
+);
+
+//Residen Evil Village
+
+$(".imgRev").hover(function () {
+  $(this).attr ("src", "https://image.api.playstation.com/vulcan/ap/rnd/202101/1905/7JQRCCU33WnaDxEbDQxm3bTc.png?w=440&thumb=false")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.56356.13809253632566266.a1f3ac36-ddef-4b21-8956-5d5668ac9650.8475240d-f04c-469d-87aa-e13eb3d97da7")
+    
+  }
+);
+
+//Fifa 22
+
+$(".imgFifa").hover(function () {
+  $(this).attr ("src", "https://image.api.playstation.com/vulcan/ap/rnd/202106/2914/W7cptuW6JeY8R4Dhqa9vmSSc.png?w=440&thumb=false")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.18006.13631243568577353.6b4f037a-e981-46d8-a51a-816831166e01.721fc92e-759a-4edb-b333-0e1ec9a95eb9")
+    
+  }
+);
+
+//MK 11
+
+$(".imgMortal").hover(function () {
+  $(this).attr ("src", "https://image.api.playstation.com/vulcan/ap/rnd/202011/0319/rdNblnyGXx8EEyqA2u5GJBmB.png?w=440&thumb=false")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.36292.13674739434371576.46d1be43-7d5d-4b71-90b0-97829522e27b.0b2c29b8-fe0f-4a1c-89d7-ce29529162c1")
+    
+  }
+);
+
+//star wars
+
+$(".imgStarWars").hover(function () {
+  $(this).attr ("src", "https://image.api.playstation.com/vulcan/ap/rnd/202105/2621/IYejmyize0uwfFEhzbSIO5r0.png?w=440&thumb=false")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.19587.65392999590663672.028b6875-f925-4d40-b3a1-e44db3b4fa32.13ac70be-1487-492d-934e-c1c514e85f52")
+    
+  }
+);
+
+//forza
+
+$(".imgForza").hover(function () {
+  $(this).attr ("src", "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2021/06/forza-horizon-5-cartel-2379291.jpg?itok=Xd5swSL5")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.46839.14212569852911719.83e50f34-8706-4131-993f-2974c44a294e.3d6bcf8a-59a1-4f85-b2c1-1935078d9d1a")
+    
+  }
+);
+
+//NBA
+
+$(".imgNba").hover(function () {
+  $(this).attr ("src", "https://pbs.twimg.com/media/E7I-5lJWYAEgkEf.jpg")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.46839.14212569852911719.83e50f34-8706-4131-993f-2974c44a294e.3d6bcf8a-59a1-4f85-b2c1-1935078d9d1a")
+    
+  }
+);
+
+//COD
+
+$(".imgCod").hover(function () {
+  $(this).attr ("src", "https://image.api.playstation.com/vulcan/img/rnd/202109/2218/JelPN9rNJfDtoQJTwDsa0deG.png?w=440&thumb=false")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.31712.14284165171924425.328fdc67-fafc-4929-b10f-b1bc44a36c07.9cb9d66c-985e-4c82-b678-6a638d68b0c8")
+    
+  }
+);
+
+//RDR 2
+
+$(".imgRed").hover(function () {
+  $(this).attr ("src", "https://image.api.playstation.com/vulcan/img/rnd/202011/1718/ooOoSjORBdw4VD3KXrHBlhHZ.png?w=440&thumb=false")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.34695.68182501197884443.ac728a87-7bc1-4a0d-8bc6-0712072da93c.25816f86-f27c-4ade-ae29-222661145f1f")
+    
+  }
+);
+
+//The Elder Scrolls V
+
+$(".imgElder").hover(function () {
+  $(this).attr ("src", "https://image.api.playstation.com/vulcan/img/rnd/202010/2613/GwaZyAhG6cK3F6oefbJrZnou.png?w=440&thumb=false")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.64810.68326442227858632.03782b23-7f26-4a8e-ba87-177bdf2c3c90.fdefe49f-270c-44e5-b660-6d7764b37f0f")
+    
+  }
+);
+
+//GTA V
+
+$(".imgGta").hover(function () {
+  $(this).attr ("src", "https://image.api.playstation.com/cdn/UP1004/CUSA00419_00/GqNiHbm2NDGAChh3UGkNvngLe3U5LmbW.png?w=440&thumb=false")
+
+  }, function () {
+
+    $(this).attr  ("src", "https://store-images.s-microsoft.com/image/apps.14994.67002547918942251.a07b8704-ba60-45a4-a51a-06c979a5426e.3a248e28-facb-4073-8b6d-749f912fa299")
+    
+  }
+);
+
+
+
