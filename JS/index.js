@@ -387,97 +387,156 @@ $("#btn2").click(function(){
 
 
 
-
-
-//Boton mas info y trailer Blackwidow
-
-
-$("#bwInfo").append('<button id="btn1" class="btn titulos">Mas info!</button>');
-$("#bwInfo").prepend(`<div id="div1" style="display: none">
-                              
-                              <p> Genero: ${nuevasPelis[0].genero}</p>
-                              <p> Duracion: ${nuevasPelis[0].duracion}</p>
-                              <button id="btn1_trailer" type="button">Trailer</button>
-                              </div>`);
-                              
-$("#btn1").click(() => { 
-  $("#div1").toggle("slow");
-});
-
-$("#btn1_trailer").click(function (e) { 
-  e.preventDefault();
-    Swal.fire({
-      title: '<strong><u>Blackwidow</u></strong>',
-      html:
-        '<iframe width="350" height="315" src="https://www.youtube.com/embed/gR3JFH_3LhY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-      showCloseButton: true,
-      focusConfirm: false,
-      confirmButtonText:
-        '<i class="fa fa-thumbs-up"></i> Muy buena!',
-      confirmButtonAriaLabel: 'Thumbs up, great!',
-      
-    })
-});
-
-//Boton mas info y trailer Blackpink
+const URLGET = "../json/peliculas.json"
 
 
 
-$("#bpInfo").append('<button id="btn2" class="btn titulos">Mas info!</button>');
-$("#bpInfo").prepend(`<div id="div2" style="display: none">
-                              
-                              <p> Genero: ${nuevasPelis[1].genero}</p>
-                              <p> Duracion: ${nuevasPelis[1].duracion}</p>
-                              <button id="btn2_trailer" type="button">Trailer</button>
-                              </div>`);
-                              
-$("#btn2").click(() => { 
-  $("#div2").toggle("slow");
-});
 
-$("#btn2_trailer").click(function (e) { 
-  e.preventDefault();
-    Swal.fire({
-      title: '<strong><u>Blackpink</u></strong>',
-      html:
-        '<iframe width="350" height="315" src="https://www.youtube.com/embed/7jx_vdvxWu0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-      showCloseButton: true,
-      focusConfirm: false,
-      confirmButtonText:
-        '<i class="fa fa-thumbs-up"></i> Muy buena!',
-      confirmButtonAriaLabel: 'Thumbs up, great!',
-      
-    })
-});
 
-//Boton mas info y trailer Cruella
+//////////Card, trailer y cambio de imagen de Blackwidow//////////////
 
-$("#cruellaInfo").append('<button id="btn3" class="btn titulos">Mas info!</button>');
-$("#cruellaInfo").prepend(`<div id="div3" style="display: none">
-                              
-                              <p> Genero: ${nuevasPelis[2].genero}</p>
-                              <p> Duracion: ${nuevasPelis[2].duracion}</p>  
-                              <button id="btn3_trailer" type="button">Trailer</button>
-                              </div>`);
-                              
-$("#btn3").click(() => { 
-  $("#div3").toggle("slow");
-});
 
-$("#btn3_trailer").click(function (e) { 
-  e.preventDefault();
-    Swal.fire({
-      title: '<strong><u>Cruella</u></strong>',
-      html:
-        '<iframe width="280" height="315" src="https://www.youtube.com/embed/gmRKv7n2If8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></iframe>',
-      showCloseButton: true,
-      focusConfirm: false,
-      confirmButtonText:
-        '<i class="fa fa-thumbs-up"></i> Muy buena!',
-      confirmButtonAriaLabel: 'Thumbs up, great!',
-      
-    })
-});
+$.get(URLGET, function (respuesta, estado) {
+  if(estado === "success"){
+    let misDatos = respuesta;
+    for (const dato of misDatos) {
+      if (dato.id == 1){
+      $("#blackWidow").prepend(`<div>
+                                    <h3 id="blackWidow" class="item-title titulos">${dato.title}</h3>
+                                    <img class="item-image imgBlackWidow" src="${dato.imagen1}" alt="imagen black widow">
+                                  <div id="bwInfo" class="item-details">
+                                    <h4 class="item-price">$ ${dato.precio}</h4>
+                                    <p> ${dato.duracion}</p>
+                                    <p> ${dato.genero}</p>
+                                    <button id="btn1_trailer" class="btn" type="button">Trailer</button>      
+                                  </div>  
+                                </div>`);
+                                $("#btn1_trailer").click(function (e) { 
+                                  e.preventDefault();
+                                    Swal.fire({
+                                      title: '<strong><u>Blackwidow</u></strong>',
+                                      html:
+                                        '<iframe width="350" height="315" src="https://www.youtube.com/embed/gR3JFH_3LhY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                                      showCloseButton: true,
+                                      focusConfirm: false,
+                                      confirmButtonText:
+                                        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+                                      confirmButtonAriaLabel: 'Thumbs up, great!',
+                                      
+                                    })
+                                })
+                                $(".imgBlackWidow").hover(function () {
+                                  $(this).attr ("src", "https://images-na.ssl-images-amazon.com/images/I/914MHuDfMSL.jpg")
+                                
+                                  }, function () {
+                                
+                                    $(this).attr  ("src", "https://lumiere-a.akamaihd.net/v1/images/blueb_007d_g_spa-ar_70x100_43a5cf52.jpeg")
+                                    
+                                  }
+                                );;
+                            
+    }}  
+    
+  }
+})    
+
+
+
+//////////Card, trailer y cambio de imagen de Blackpink//////////////
+
+
+$.get(URLGET, function (respuesta, estado) {
+  if(estado === "success"){
+    let misDatos = respuesta;
+    for (const dato of misDatos) {
+      if (dato.id == 2){
+      $("#blackPink").prepend(`<div>
+                                    <h3 id="blackPink" class="item-title titulos">${dato.title}</h3>
+                                    <img class="item-image imgBlackPink" src="${dato.imagen1}" alt="imagen blackPink">
+                                  <div id="bpInfo" class="item-details">
+                                    <h4 class="item-price">$ ${dato.precio}</h4>
+                                    <p> ${dato.duracion}</p>
+                                    <p> ${dato.genero}</p>
+                                    <button id="btn2_trailer" class="btn" type="button">Trailer</button>      
+                                  </div>  
+                                </div>`);
+                                $("#btn2_trailer").click(function (e) { 
+                                  e.preventDefault();
+                                    Swal.fire({
+                                      title: '<strong><u>Blackpink</u></strong>',
+                                      html:
+                                        '<iframe width="350" height="315" src="https://www.youtube.com/embed/7jx_vdvxWu0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                                      showCloseButton: true,
+                                      focusConfirm: false,
+                                      confirmButtonText:
+                                        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+                                      confirmButtonAriaLabel: 'Thumbs up, great!',
+                                      
+                                    })
+                                })
+                                $(".imgBlackPink").hover(function () {
+                                  $(this).attr ("src", "http://sun9-9.userapi.com/impg/Ah2EhYK2OdT2T6Ox-AxpASN0wQvCRL3oa4wzLw/qCwfobZENqI.jpg?size=864x1080&quality=96&sign=4694144fc15e98fb2f7f2490da279190&type=album")
+                                
+                                  }, function () {
+                                
+                                    $(this).attr  ("src", "https://pics.filmaffinity.com/Blackpink_The_Movie-147705164-large.jpg")
+                                    
+                                  }
+                                );;
+                            
+    }}  
+    
+  }
+})    
+
+
+
+//////////Card, trailer y cambio de imagen de Cruella//////////////
+
+$.get(URLGET, function (respuesta, estado) {
+  if(estado === "success"){
+    let misDatos = respuesta;
+    for (const dato of misDatos) {
+      if (dato.id == 3){
+      $("#cruella").prepend(`<div>
+                                    <h3 id="blackPink" class="item-title titulos">${dato.title}</h3>
+                                    <img class="item-image imgCruella" src="${dato.imagen1}" alt="imagen cruella">
+                                  <div id="cruellaInfo" class="item-details">
+                                    <h4 class="item-price">$ ${dato.precio}</h4>
+                                    <p> ${dato.duracion}</p>
+                                    <p> ${dato.genero}</p>
+                                    <button id="btn3_trailer" class="btn" type="button">Trailer</button>      
+                                  </div>  
+                                </div>`);
+                                $("#btn3_trailer").click(function (e) { 
+                                  e.preventDefault();
+                                    Swal.fire({
+                                      title: '<strong><u>Blackpink</u></strong>',
+                                      html:
+                                        '<iframe width="350" height="315" src="https://www.youtube.com/embed/_nvO-yhc61w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                                      showCloseButton: true,
+                                      focusConfirm: false,
+                                      confirmButtonText:
+                                        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+                                      confirmButtonAriaLabel: 'Thumbs up, great!',
+                                      
+                                    })
+                                })
+                                $(".imgCruella").hover(function () {
+                                  $(this).attr ("src", "https://pics.filmaffinity.com/Cruella-917590601-large.jpg")
+                                
+                                  }, function () {
+                                
+                                    $(this).attr  ("src", "https://images.clarin.com/2021/02/16/el-poster-de-cruella-por___hNE6NYG-f_720x0__1.jpg")
+                                    
+                                  }
+                                );;
+                            
+    }}  
+    
+  }
+})    
+
 
 //Boton mas info y trailer Esc Suicida
 
@@ -1464,6 +1523,3 @@ $(".imgGta").hover(function () {
     
   }
 );
-
-
-
