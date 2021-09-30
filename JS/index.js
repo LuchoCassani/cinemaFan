@@ -66,46 +66,7 @@ $(".btn").click(function(){
 
 //cambio de imagen cuando se pasa el mouse por arriba de la misma
 
-//BlackWidow
-$(".imgBlackWidow").hover(function () {
-  $(this).attr ("src", "https://images-na.ssl-images-amazon.com/images/I/914MHuDfMSL.jpg")
 
-  }, function () {
-
-    $(this).attr  ("src", "https://lumiere-a.akamaihd.net/v1/images/blueb_007d_g_spa-ar_70x100_43a5cf52.jpeg")
-    
-  }
-);
-//BlackPink
-$(".imgBlackPink").hover(function () {
-  $(this).attr ("src", "http://sun9-9.userapi.com/impg/Ah2EhYK2OdT2T6Ox-AxpASN0wQvCRL3oa4wzLw/qCwfobZENqI.jpg?size=864x1080&quality=96&sign=4694144fc15e98fb2f7f2490da279190&type=album")
-
-  }, function () {
-
-    $(this).attr  ("src", "https://pics.filmaffinity.com/Blackpink_The_Movie-147705164-large.jpg")
-    
-  }
-);
-//Cruella
-$(".imgCruella").hover(function () {
-  $(this).attr ("src", "https://pics.filmaffinity.com/Cruella-917590601-large.jpg")
-
-  }, function () {
-
-    $(this).attr  ("src", "https://images.clarin.com/2021/02/16/el-poster-de-cruella-por___hNE6NYG-f_720x0__1.jpg")
-    
-  }
-);
-//Escuadron Suicida
-$(".imgSuicida").hover(function () {
-  $(this).attr ("src", "https://spoiler.bolavip.com/export/sites/bolavip/img/2020/08/22/the_suicide_squad_dc_fandome_pelicula_estreno_gunn.jpg_859237845.jpg")
-
-  }, function () {
-
-    $(this).attr  ("src", "https://static.cinemarkhoyts.com.ar/Images/Posters/2cebbbfafc0f5bf3eb85c37b65e338fb.jpg?v=02092021")
-    
-  }
-);
 //El Padre
 $(".imgPadre").hover(function () {
   $(this).attr ("src", "https://i.guim.co.uk/img/media/8e4f6890df52a5a4dacb4261fa322b8d4ad16c9d/0_0_1113_1123/master/1113.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=aac6f878f48dff6836c29201801a2bb5")
