@@ -538,34 +538,51 @@ $.get(URLGET, function (respuesta, estado) {
 })    
 
 
-//Boton mas info y trailer Esc Suicida
+//////////Card, trailer y cambio de imagen de escuadron suicida//////////////
 
-$("#esInfo").append('<button id="btn4" class="btn titulos">Mas info!</button>');
-$("#esInfo").prepend(`<div id="div4" style="display: none">
-                              
-                              <p> Genero: ${nuevasPelis[3].genero}</p>
-                              <p> Duracion: ${nuevasPelis[3].duracion}</p>
-                              <button id="btn4_trailer" type="button">Trailer</button>
-                              </div>`);
-                              
-$("#btn4").click(() => { 
-  $("#div4").toggle("slow");
-});
-
-$("#btn4_trailer").click(function (e) { 
-  e.preventDefault();
-    Swal.fire({
-      title: '<strong><u>Escuadron Suicida</u></strong>',
-      html:
-        '<iframe width="350" height="315" src="https://www.youtube.com/embed/IblLmbGxw1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-      showCloseButton: true,
-      focusConfirm: false,
-      confirmButtonText:
-        '<i class="fa fa-thumbs-up"></i> Muy buena!',
-      confirmButtonAriaLabel: 'Thumbs up, great!',
-      
-    })
-});
+$.get(URLGET, function (respuesta, estado) {
+  if(estado === "success"){
+    let misDatos = respuesta;
+    for (const dato of misDatos) {
+      if (dato.id == 4){
+      $("#escSuicida").prepend(`<div>
+                                    <h3 id="escSuicida" class="item-title titulos">${dato.title}</h3>
+                                    <img class="item-image imgSuicida" src="${dato.imagen1}" alt="imagen cruella">
+                                  <div id="cruellaInfo" class="item-details">
+                                    <h4 class="item-price">$ ${dato.precio}</h4>
+                                    <p> ${dato.duracion}</p>
+                                    <p> ${dato.genero}</p>
+                                    <button id="btn4_trailer" class="btn" type="button">Trailer</button>      
+                                  </div>  
+                                </div>`);
+                                $("#btn4_trailer").click(function (e) { 
+                                  e.preventDefault();
+                                    Swal.fire({
+                                      title: '<strong><u>Blackpink</u></strong>',
+                                      html:
+                                        '<iframe width="350" height="315" src="https://www.youtube.com/embed/eg5ciqQzmK0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                                      showCloseButton: true,
+                                      focusConfirm: false,
+                                      confirmButtonText:
+                                        '<i class="fa fa-thumbs-up"></i> Muy buena!',
+                                      confirmButtonAriaLabel: 'Thumbs up, great!',
+                                      
+                                    })
+                                })
+                                $(".imgSuicida").hover(function () {
+                                  $(this).attr ("src", "https://spoiler.bolavip.com/export/sites/bolavip/img/2020/08/22/the_suicide_squad_dc_fandome_pelicula_estreno_gunn.jpg_859237845.jpg")
+                                
+                                  }, function () {
+                                
+                                    $(this).attr  ("src", "https://static.cinemarkhoyts.com.ar/Images/Posters/2cebbbfafc0f5bf3eb85c37b65e338fb.jpg?v=02092021")
+                                    
+                                  }
+                                );;
+                            
+    }}  
+    
+  }
+})    
 
 //Boton mas info y trailer Padre
 
