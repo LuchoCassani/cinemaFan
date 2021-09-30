@@ -387,7 +387,7 @@ $("#btn2").click(function(){
 
 
 
-const URLGET = "../json/peliculas.json"
+const URLGET = "../json_/peliculas.json"
 
 
 
