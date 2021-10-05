@@ -5,6 +5,12 @@
   padding-bottom: 3rem;
 }
 #encabezado .row {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin: 0 auto;
 }
@@ -79,6 +85,27 @@
   }
 }
 
+#sugerencias {
+  width: 30rem;
+  margin-top: 2rem;
+  padding: 0;
+}
+#sugerencias .form-control, #sugerencias .form-check-input, #sugerencias .form-check-label, #sugerencias .form-select, #sugerencias .form-label {
+  margin: 0.5rem;
+}
+#sugerencias .btnFormulario {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  padding: auto;
+  box-shadow: 0px 0px 30px 0px #F25C05;
+}
+#sugerencias .btnFormulario:hover {
+  border: solid 1px blueviolet;
+  color: deeppink;
+}
+
 .juegos .grillaJuegos .pelis_juegos img, .estrenos .peliculas .pelis_juegos img {
   height: 22rem;
   margin-top: 2rem;
@@ -122,6 +149,8 @@
 }
 .estrenos .peliculas .pelis_juegos img:hover {
   transform: scale(1.1, 1.1);
+  border: solid 1px blueviolet;
+  color: deeppink;
 }
 .estrenos .peliculas .pelis_juegos .contenidoCard h5 {
   margin-top: 1.4rem;
@@ -136,9 +165,11 @@
 }
 .estrenos .peliculas .pelis_juegos .btn:hover {
   color: #c501e2;
+  box-shadow: 0px 0px 30px 0px #F25C05;
 }
 .estrenos .peliculas .pelis_juegos .btnInfo:hover {
   color: #c501e2;
+  box-shadow: 0px 0px 30px 0px #F25C05;
 }
 @media (max-width: 568px) {
   .estrenos .pelis_juegos img {

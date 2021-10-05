@@ -4,6 +4,12 @@
     padding-bottom: 3rem;
     
     .row{
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+        justify-content: center;
+        align-items: center;
         padding: 0;
         margin: 0 auto;
     }
@@ -91,9 +97,31 @@
     
 }
 
+#sugerencias{
+    width: 30rem;
+    margin-top: 2rem;
+    padding: 0;
+        .form-control , .form-check-input, .form-check-label, .form-select, .form-label{
+            margin: 0.5rem;
+        }
+        .btnFormulario{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 0 auto;
+            padding: auto;
+            box-shadow: 0px 0px 30px 0px #F25C05;
+        }
+        .btnFormulario:hover{
+            
+            border: solid 1px blueviolet;
+            color: deeppink;
+            
+        }
+            
+}
 
 
-   
 
 
 
