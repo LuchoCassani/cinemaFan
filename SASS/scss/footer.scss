@@ -3,7 +3,7 @@ footer{
     margin-top: 3rem;
     margin-bottom: 0;
     padding: 0;
-    background-color: rgb(39, 39, 39);
+    border: solid 1px;
         .redesFooter{
             display: flex;
             flex-direction: row;
@@ -17,9 +17,7 @@ footer{
                 padding: .3rem;
                 
             }
-        }       
-
-        @media (max-width: 568px){
+            @media (max-width: 568px){
             
                 display: none;
                 
@@ -28,6 +26,11 @@ footer{
                 width: 8rem;
             }
         }    
+
+
+        }       
+
+        
         @media (max-width: 990px){
             .redes{
                 justify-content: flex-end;

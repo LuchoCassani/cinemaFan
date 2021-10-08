@@ -189,7 +189,7 @@ $(".comprarButton").click(function (e) {
   e.preventDefault();
   Swal.fire({
     title: 'Excelente!',
-    text: 'Gracias por tu compra, revisa tu casilla de correo.',
+    text: 'Gracias por tu compra, que lo disfrutes!',
     imageUrl: 'https://cl.buscafs.com/www.levelup.com/public/uploads/images/678400/678400.jpg',
     imageWidth: 400,
     imageHeight: 200,
@@ -1239,7 +1239,7 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
                                     Swal.fire({
                                       title: '<strong><u>Fifa 22</u></strong>',
                                       html:
-                                        '<iframe width="350" height="315" src="https://www.youtube.com/embed/SYsi5QuOJNE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                                        '<iframe width="350" height="315" src="https://www.youtube.com/embed/vLj-27T-SEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                                       showCloseButton: true,
                                       focusConfirm: false,
                                       confirmButtonText:
@@ -1276,10 +1276,10 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
                                   <div id="mortalInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
-                                    <button id="btn22_trailer" class="btn" type="button">Trailer</button>      
+                                    <button id="btn23_trailer" class="btn" type="button">Trailer</button>      
                                   </div>  
                                 </div>`);
-                                $("#btn22_trailer").click(function (e) { 
+                                $("#btn23_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
                                       title: '<strong><u>MK 11 ultimate</u></strong>',
@@ -1320,10 +1320,10 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
                                   <div id="starWarsInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
-                                    <button id="btn23_trailer" class="btn" type="button">Trailer</button>      
+                                    <button id="btn24_trailer" class="btn" type="button">Trailer</button>      
                                   </div>  
                                 </div>`);
-                                $("#btn23_trailer").click(function (e) { 
+                                $("#btn24_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
                                       title: '<strong><u>SW Jedi Fallen Order</u></strong>',
@@ -1365,10 +1365,10 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
                                   <div id="forzalInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
-                                    <button id="btn24_trailer" class="btn" type="button">Trailer</button>      
+                                    <button id="btn25_trailer" class="btn" type="button">Trailer</button>      
                                   </div>  
                                 </div>`);
-                                $("#btn24_trailer").click(function (e) { 
+                                $("#btn25_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
                                       title: '<strong><u>Forza Horizon 5</u></strong>',
@@ -1409,10 +1409,10 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
                                   <div id="nbalInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
-                                    <button id="btn25_trailer" class="btn" type="button">Trailer</button>      
+                                    <button id="btn26_trailer" class="btn" type="button">Trailer</button>      
                                   </div>  
                                 </div>`);
-                                $("#btn25_trailer").click(function (e) { 
+                                $("#btn26_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
                                       title: '<strong><u>NBA2K22</u></strong>',
@@ -1454,10 +1454,10 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
                                   <div id="codlInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
-                                    <button id="btn26_trailer" class="btn" type="button">Trailer</button>      
+                                    <button id="btn27_trailer" class="btn" type="button">Trailer</button>      
                                   </div>  
                                 </div>`);
-                                $("#btn26_trailer").click(function (e) { 
+                                $("#btn27_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
                                       title: '<strong><u>COD Vanguard</u></strong>',
@@ -1499,10 +1499,10 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
                                   <div id="redInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
-                                    <button id="btn27_trailer" class="btn" type="button">Trailer</button>      
+                                    <button id="btn28_trailer" class="btn" type="button">Trailer</button>      
                                   </div>  
                                 </div>`);
-                                $("#btn27_trailer").click(function (e) { 
+                                $("#btn28_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
                                       title: '<strong><u>Red Dead Redemption II</u></strong>',
@@ -1545,10 +1545,10 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
                                   <div id="elderInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
-                                    <button id="btn28_trailer" class="btn" type="button">Trailer</button>      
+                                    <button id="btn29_trailer" class="btn" type="button">Trailer</button>      
                                   </div>  
                                 </div>`);
-                                $("#btn28_trailer").click(function (e) { 
+                                $("#btn29_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
                                       title: '<strong><u>Skyrim</u></strong>',
@@ -1590,10 +1590,10 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
                                   <div id="gtaInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
-                                    <button id="btn29_trailer" class="btn" type="button">Trailer</button>      
+                                    <button id="btn30_trailer" class="btn" type="button">Trailer</button>      
                                   </div>  
                                 </div>`);
-                                $("#btn29_trailer").click(function (e) { 
+                                $("#btn30_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
                                       title: '<strong><u>GTA V</u></strong>',
@@ -1639,11 +1639,11 @@ $("#sugerencias").append(`
                               <input type="text" class="form-control apellidotxt guardarDato" placeholder="Tu apellido">
                               <div class="form-check">
                                 <input class="form-check-input" type="radio" name="radioDefault" id="formRadioDefault">
-                                <label class="form-check-label" for="formRadioDefault">Video juegos</label>
+                                <label class="form-check-label titulos" for="formRadioDefault">Video juegos</label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="radio" name="radioDefault" id="formRadioChecked" checked="">
-                                <label class="form-check-label" for="formRadioChecked">Peliculas</label>
+                                <label class="form-check-label titulos" for="formRadioChecked">Peliculas</label>
                               </div>
                               <select class="form-select" aria-label="genero preferido">
                                 <option selected="">Genero preferido</option>
@@ -1656,32 +1656,12 @@ $("#sugerencias").append(`
                                 <option value="6">Otro</option>
                               </select>
                               <input type="text" class="form-control sugerenciatxt guardarDato" placeholder="¿Que te gustaria que incluyeramos?">
-                              <label for="formControlInput" class="form-label">Email address</label>
+                              <label for="formControlInput" class="form-label titulos">Email address</label>
                               <input type="email" class="form-control email guardarDato" id="formControlInput" placeholder="name@example.com">
                               <input type="submit" value="Enviar" class="btn titulos  btnFormulario">
                             </form>                          
                           `)
 
-///////boton para ir al menu//////
-$("#botonArriba").append(
-  `<button id="btnScrollArriba" class="btn_ScrollArriba">
-  <i class="fas fa-arrow-circle-up"></i>
-  </button>
-
-  `)
-
-
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 300) {
-        $('.btn_ScrollArriba').fadeIn('slow');
-    } else {
-        $('.btn_ScrollArriba').fadeOut('slow');
-    }
-});
-$('.btn_ScrollArriba').click(function(event) {
-    event.preventDefault();
-    $('html, body').animate({scrollTop: 0}, 600);
-});
 
 
 
@@ -1705,7 +1685,11 @@ const sugerencias = []
 
 $(".btnFormulario").click(function (e) { 
   e.preventDefault();
-  alert ("HOLA");
+  
+    Swal.fire('Muchas gracias por tu sugerencia!');
+  
+
+    
   const sugerenciaNombre = $(".nombretxt").val();
   const sugerenciaApellido = $(".apellidotxt").val();
   const sugerenciaGenero = $(".sugerenciatxt").val();
@@ -1723,6 +1707,28 @@ $(".btnFormulario").click(function (e) {
   }
   sugerencias.push = new nuevasSugerencias (sugerenciaNombre,sugerenciaApellido,sugerenciaGenero,sugerenciaEmail)
 
+});
+
+
+///////boton para ir al menu//////
+$("#botonArriba").append(
+  `<button id="btnScrollArriba" class="btn_ScrollArriba">
+  <i class="fas fa-arrow-circle-up"></i>
+  </button>
+
+  `)
+
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 300) {
+        $('.btn_ScrollArriba').fadeIn('slow');
+    } else {
+        $('.btn_ScrollArriba').fadeOut('slow');
+    }
+});
+$('.btn_ScrollArriba').click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({scrollTop: 0}, 600);
 });
 
 

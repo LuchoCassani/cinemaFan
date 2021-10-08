@@ -94,7 +94,7 @@
   width: 15rem;
 }
 
-.shopping-cart .comprarButton, .juegos .grillaJuegos .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btnInfo, .estrenos .juegos .pelis_juegos .btn, .estrenos .juegos .pelis_juegos .btnInfo {
+#sugerencias .btnFormulario, .shopping-cart .comprarButton, .juegos .grillaJuegos .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btnInfo, .estrenos .juegos .pelis_juegos .btn, .estrenos .juegos .pelis_juegos .btnInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -291,7 +291,9 @@
   justify-content: center;
   margin: 0 auto;
   padding: auto;
-  box-shadow: 0px 0px 30px 0px #F25C05;
+  text-decoration: none;
+  color: white;
+  margin: 1rem;
 }
 #sugerencias .btnFormulario:hover {
   border: solid 1px blueviolet;
@@ -326,7 +328,7 @@ footer {
   margin-top: 3rem;
   margin-bottom: 0;
   padding: 0;
-  background-color: #272727;
+  border: solid 1px;
 }
 footer .redesFooter {
   display: flex;
@@ -342,10 +344,10 @@ footer .redesFooter img {
   padding: 0.3rem;
 }
 @media (max-width: 568px) {
-  footer {
+  footer .redesFooter {
     display: none;
   }
-  footer .logo img {
+  footer .redesFooter .logo img {
     width: 8rem;
   }
 }
