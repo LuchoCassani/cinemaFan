@@ -3,7 +3,8 @@
     height: 22rem;
     margin-top: 2rem;
     border: solid 1px white;
-    box-shadow: 0px 0px 15px 0px #F25C05;
+    border-radius: 12%;
+    box-shadow: 0px 0px 15px 0px white;
     width: 15rem;
 } 
 %botonDeCompra{
@@ -12,6 +13,7 @@
             justify-content: center;
             align-items: center;
             border: solid 1px blueviolet;
+            font-size: 1rem;
             
 }
 
@@ -31,7 +33,11 @@
    
 }
 
-
+@media (max-width: 568px){
+    .presentacion h1{
+        font-size: 1rem;
+    }
+}
 
 
 
@@ -39,6 +45,10 @@
 //Carousel//
 .carousel{
     margin-top: 2rem; 
+    @media (max-width: 568px){
+            
+        width: 100%;
+    }
     
 }
 
@@ -55,10 +65,10 @@
             padding: 2rem;
         }
     }
-    .peliculas{
+    .peliculas, .juegos{
         margin-top: 2rem;
         padding: 0;
-            width: 100%;
+        width: 100%;
         .pelis_juegos{
                 img{
                     @extend %imagenPelisJuegos
@@ -66,7 +76,7 @@
                     img:hover{
                         transform: scale(1.1, 1.1);
                         border: solid 1px blueviolet;
-            color: deeppink;
+                        color: deeppink;
                     }
                 .contenidoCard{
                         h5{
@@ -75,13 +85,14 @@
                             
                         }
                         p{
-                            margin: 3px;
+                            margin: 1rem;
                         }
                     }    
                 .btn, .btnInfo{
                      @extend %botonDeCompra;
                      text-decoration: none;  
-                     color: #F25C05;     
+                     color: white; 
+                     margin: 1rem;    
                         }
                         .btn:hover{
                             color: #c501e2;
@@ -94,13 +105,36 @@
                     
         }
     }    
-
-    @media (max-width: 568px){
-        .pelis_juegos img{
-            width: 8rem;
-        }
+    .cardColor{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12%;
+       
     }
-}    
+    .item-details h4  {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 1rem;
+       
+    }
+    .item-details p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 1rem;
+        @media (max-width: 568px){
+            
+            display: none;
+        
+    }
+    }
+    
+
+   
+}
+
 
 
 //grilla de juegos//
@@ -138,23 +172,12 @@
                 }
         }    
 
-        @media (max-width: 568px){
-            .pelis_juegos img{
-                width: 8rem;
-            }
-        }
+        
 }
 
-ol{
-    color: yellow;
-        li{
-            
-            color: white;
-                
-        }
-}
 
-//sugerencias
+
+
 
 #contenidoCarrito{
     img{
@@ -162,52 +185,19 @@ ol{
         width: 5rem;
     }
 }
-#inputSearch{
-    width: 10rem;
-    height: 2rem;
-    text-indent: 10px;
-    background-color: yellow;
-}        
-    .contentSearch{
-            width: 100%;
-            height: 1rem;
-            display: none;
-            background-color: red;
-                .contentTable{
-                    width: 80%;
-                    max-height: 200px;
-                    height: auto;
-                    background-color: red;
-                    margin-left: 10px;
-                    padding: 10px;
-                    overflow-x: hidden;
-                    overflow-y: visible;
-                        table{
-                            width: 100%;
-                                tbody tr td a{
-                                    display: block;
-                                    padding: 10px;
-                                    color: white;
-                                    text-decoration: none;
 
-                                }
-                                tbody tr td a:hover{
-                                    background-color: yellowgreen;
-                                   
-
-                                }
-                        }
-                }
-        }
 .titulos{
+    margin-top: 1rem;
     color: white;
 }
 
 .imgCarrito{
-    width: 17rem;
-    height: 22rem;
-    padding: 2rem;
-    margin: 0;
+   
+    @extend %imagenPelisJuegos;
+    @media (max-width: 568px){
+        height: 15rem;    
+        width: 8rem;
+    }
 }
 .nombreJuegoPeli{
     display: flex;
@@ -215,4 +205,97 @@ ol{
     justify-content: center;
     align-items: center;
 
+}
+.item-details{
+    margin-top: 1rem;
+}
+.divPeliculaJuego{
+    color: white;
+}
+
+//boton para subir al menu
+
+.btn_ScrollArriba{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #c501e2;
+    background: white;
+    padding: .3rem .6rem;
+    border: 1px solid white;
+    border-radius: 100%;
+    cursor: pointer;
+    display: none;
+}
+.shopping-cart{
+    .comprarButton{
+        @extend %botonDeCompra;
+                        text-decoration: none;  
+                        color: white; 
+                        margin: 1rem;     
+                        }
+                        .btn:hover{
+                            color: #c501e2;
+                            box-shadow: 0px 0px 30px 0px #F25C05
+                        }
+}
+
+
+////sugerencias////@at-root
+
+#sugerencias{
+    border: solid 1px white;
+    .formulario{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width: 568px){
+    #encabezado .row{
+        display: flex;
+        flex-direction: row;
+        
+    }
+}
+
+#sugerencias{
+    width: 30rem;
+    margin-top: 2rem;
+    padding: 0;
+    
+        .form-control , .form-check-input, .form-check-label, .form-select, .form-label{
+            margin: 0.5rem;
+        }
+        .btnFormulario{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 0 auto;
+            padding: auto;
+            box-shadow: 0px 0px 30px 0px #F25C05;
+        }
+        .btnFormulario:hover{
+            
+            border: solid 1px blueviolet;
+            color: deeppink;
+            
+        }
+        @media (max-width: 568px){
+            
+            width: 100%;
+        }
+}
+.shoppingCartItemQuantity{
+    
+        height: 2rem;
+        width: 3rem;
+        
+    }
+.cartTitle{
+    @media (max-width: 568px){
+            
+        display: none;;
+    }
 }

@@ -110,29 +110,26 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
 
   const shoppingCartRow = document.createElement('div');
   const shoppingCartContent = `
-  <div class="container shoppingCartItem">
-        
-        <div class="row shopping-cart-item">
-                <div class="col-4 d-flex"><img src=${itemImage} class="shopping-cart-image imgCarrito "></div>
-                <div class="col-2 d-flex justify-content-center">
-                    <h6 class="shopping-cart-item-title shoppingCartItemTitle titulos nombreJuegoPeli">${itemTitle}</h6>
-                </div>
-            <div class="col-2 shopping-cart-price titulos d-flex justify-content-center"> 
-                <p class="item-price shoppingCartItemPrice nombreJuegoPeli"> ${itemPrice}</p>
-                </div>
-            <div class="col-4 d-flex justify-content-center flex-column">
-            <div  d-flex> 
-                <div class="shopping-cart-quantity d-flex">
-                    <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
-                        value="1">
-                    <button class="btn btn-danger buttonDelete d-flex  " type="button">X</button>
-                </div>
-              </div>  
-            </div>
-        </div>
-        
-
-</div>`;
+      <div class="container shoppingCartItem container-fluid">
+          <div class="row shopping-cart-item d-flex">
+                  <div class="col d-flex">
+                    <img src=${itemImage} class="shopping-cart-image imgCarrito ">
+                  </div>
+                  
+                  <div class="col shopping-cart-price titulos d-flex justify-content-center"> 
+                      <p class="item-price shoppingCartItemPrice nombreJuegoPeli"> ${itemPrice}</p>
+                  </div>
+                  <div class="col d-flex justify-content-center flex-column">
+                        <div  d-flex> 
+                            <div class="shopping-cart-quantity d-flex align-items-center">
+                                  <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
+                                  value="1">
+                                <button class="comprarButton btn-danger buttonDelete d-flex  " type="button">X</button>
+                            </div>
+                        </div>  
+                  </div>
+          </div>
+      </div>`;
   shoppingCartRow.innerHTML = shoppingCartContent;
   shoppingCartItemsContainer.append(shoppingCartRow);
 
@@ -188,20 +185,30 @@ function comprarButtonClicked() {
   updateShoppingCartTotal();
 }
 
+$(".comprarButton").click(function (e) { 
+  e.preventDefault();
+  Swal.fire({
+    title: 'Excelente!',
+    text: 'Gracias por tu compra, revisa tu casilla de correo.',
+    imageUrl: 'https://cl.buscafs.com/www.levelup.com/public/uploads/images/678400/678400.jpg',
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: 'Custom image',
+  })
+});
 
-const URLGET = "../json_/peliculas.json"
 
 //////////Card, trailer y cambio de imagen de Blackwidow//////////////
-
+const URLGET = "../json_/peliculas.json"
 
 $.get(URLGET, function (respuesta, estado) {
   if(estado === "success"){
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 1){
-      $("#blackWidow").prepend(`<div>
+      $("#blackWidow").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="blackWidow" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgBlackWidow" src="${dato.imagen1}" alt="imagen black widow">
+                                    <img class="item-image imgBlackWidow pelis_juegos" src="${dato.imagen1}" alt="imagen black widow">
                                   <div id="bwInfo" class="item-details">
                                     <h4 class="item-price">$ ${dato.precio}</h4>
                                     <p> ${dato.duracion}</p>
@@ -248,7 +255,7 @@ $.get(URLGET, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 2){
-      $("#blackPink").prepend(`<div>
+      $("#blackPink").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="blackPink" class="item-title titulos">${dato.title}</h3>
                                     <img class="item-image imgBlackPink" src="${dato.imagen1}" alt="imagen blackPink">
                                   <div id="bpInfo" class="item-details">
@@ -296,7 +303,7 @@ $.get(URLGET, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 3){
-      $("#cruella").prepend(`<div>
+      $("#cruella").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="cruella" class="item-title titulos">${dato.title}</h3>
                                     <img class="item-image imgCruella pelis_juegos" src="${dato.imagen1}" alt="imagen cruella">
                                   <div id="cruellaInfo" class="item-details">
@@ -309,7 +316,7 @@ $.get(URLGET, function (respuesta, estado) {
                                 $("#btn3_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
-                                      title: '<strong><u>Blackpink</u></strong>',
+                                      title: '<strong><u>Cruella</u></strong>',
                                       html:
                                         '<iframe width="350" height="315" src="https://www.youtube.com/embed/_nvO-yhc61w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                                       showCloseButton: true,
@@ -343,7 +350,7 @@ $.get(URLGET, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 4){
-      $("#escSuicida").prepend(`<div>
+      $("#escSuicida").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="escSuicida" class="item-title titulos">${dato.title}</h3>
                                     <img class="item-image imgSuicida" src="${dato.imagen1}" alt="imagen escuadron suicida 2">
                                   <div id="escInfo" class="item-details">
@@ -389,9 +396,9 @@ $.get(URLGET, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 5){
-      $("#padre").prepend(`<div>
+      $("#padre").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="padre" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgPadre" src="${dato.imagen1}" alt="imagen escuadron suicida 2">
+                                    <img class="item-image imgPadre" src="${dato.imagen1}" alt="imagen de el padre">
                                   <div id="padreInfo" class="item-details">
                                     <h4 class="item-price">$ ${dato.precio}</h4>
                                     <p> ${dato.duracion}</p>
@@ -434,7 +441,7 @@ $.get(URLGET, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 6){
-      $("#freeGuy").prepend(`<div>
+      $("#freeGuy").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="freeGuy" class="item-title titulos">${dato.title}</h3>
                                     <img class="item-image imgFreeGuy" src="${dato.imagen1}" alt="imagen free guy">
                                   <div id="fgInfo" class="item-details">
@@ -479,9 +486,9 @@ $.get(URLGET, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 7){
-      $("#rp9").prepend(`<div>
+      $("#rp9").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="rp9" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgRyF9" src="${dato.imagen1}" alt="imagen free guy">
+                                    <img class="item-image imgRyF9" src="${dato.imagen1}" alt="imagen rapido y furioso 9">
                                   <div id="rYfInfo" class="item-details">
                                     <h4 class="item-price">$ ${dato.precio}</h4>
                                     <p> ${dato.duracion}</p>
@@ -526,7 +533,7 @@ $.get(URLGET, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 8){
-      $("#jungleCruise").prepend(`<div>
+      $("#jungleCruise").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="jungleCruise" class="item-title titulos">${dato.title}</h3>
                                     <img class="item-image imgJungleCruise" src="${dato.imagen1}" alt="imagen jungle cruise">
                                   <div id="jcInfo" class="item-details">
@@ -573,9 +580,9 @@ $.get(URLGET, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 9){
-      $("#purga").prepend(`<div>
+      $("#purga").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="purga" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgLaPurga" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgLaPurga" src="${dato.imagen1}" alt="imagen de la Purga">
                                   <div id="purgaInfo" class="item-details">
                                     <h4 class="item-price">$ ${dato.precio}</h4>
                                     <p> ${dato.duracion}</p>
@@ -620,9 +627,9 @@ $.get(URLGET, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 10){
-      $("#spaceJam").prepend(`<div>
+      $("#spaceJam").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="spaceJam" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgSapceJam" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgSapceJam" src="${dato.imagen1}" alt="imagen Space Jam">
                                   <div id="sjInfo" class="item-details">
                                     <h4 class="item-price">$ ${dato.precio}</h4>
                                     <p> ${dato.duracion}</p>
@@ -633,7 +640,7 @@ $.get(URLGET, function (respuesta, estado) {
                                 $("#btn10_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
-                                      title: '<strong><u>Spacew Jam</u></strong>',
+                                      title: '<strong><u>Space Jam</u></strong>',
                                       html:
                                         '<iframe width="350" height="315" src="https://www.youtube.com/embed/z7PSyWuArVQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                                       showCloseButton: true,
@@ -670,9 +677,9 @@ $.get(URLGET, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 11){
-      $("#candyMan").prepend(`<div>
+      $("#candyMan").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="candyMan" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgCandyMan" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgCandyMan" src="${dato.imagen1}" alt="imagen CAndyman">
                                   <div id="candyInfo" class="item-details">
                                     <h4 class="item-price">$ ${dato.precio}</h4>
                                     <p> ${dato.duracion}</p>
@@ -683,7 +690,7 @@ $.get(URLGET, function (respuesta, estado) {
                                 $("#btn11_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
-                                      title: '<strong><u>Spacew Jam</u></strong>',
+                                      title: '<strong><u>Candiman</u></strong>',
                                       html:
                                         '<iframe width="350" height="315" src="https://www.youtube.com/embed/tlwzuZ9kOQU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                                       showCloseButton: true,
@@ -719,9 +726,9 @@ $.get(URLGET, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 12){
-      $("#cryMacho").prepend(`<div>
+      $("#cryMacho").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="cryMacho" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgCryMacho" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgCryMacho" src="${dato.imagen1}" alt="imagen Cry Macho">
                                   <div id="cmInfo" class="item-details">
                                     <h4 class="item-price">$ ${dato.precio}</h4>
                                     <p> ${dato.duracion}</p>
@@ -765,9 +772,9 @@ $.get(URLGET, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 13){
-      $("#viejos").prepend(`<div>
+      $("#viejos").prepend(`<div class="divPeliculaJuego"> 
                                     <h3 id="viejos" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgViejos" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgViejos" src="${dato.imagen1}" alt="imagen Viejos">
                                   <div id="viejosInfo" class="item-details">
                                     <h4 class="item-price">$ ${dato.precio}</h4>
                                     <p> ${dato.duracion}</p>
@@ -811,9 +818,9 @@ $.get(URLGET, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 14){
-      $("#reminis").prepend(`<div>
+      $("#reminis").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="reminis" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgReminiscencia" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgReminiscencia" src="${dato.imagen1}" alt="imagen Reminiscencia">
                                   <div id="remiInfo" class="item-details">
                                     <h4 class="item-price">$ ${dato.precio}</h4>
                                     <p> ${dato.duracion}</p>
@@ -824,7 +831,7 @@ $.get(URLGET, function (respuesta, estado) {
                                 $("#btn14_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
-                                      title: '<strong><u>Viejos</u></strong>',
+                                      title: '<strong><u>Reminiscencia</u></strong>',
                                       html:
                                         '<iframe width="350" height="315" src="https://www.youtube.com/embed/grL3Z6xDa7A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                                       showCloseButton: true,
@@ -858,9 +865,9 @@ $.get(URLGET, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 15){
-      $("#venom").prepend(`<div>
+      $("#venom").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="venom" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgVenom" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgVenom" src="${dato.imagen1}" alt="imagen Venom">
                                   <div id="venomInfo" class="item-details">
                                     <h4 class="item-price">$ ${dato.precio}</h4>
                                     <p> ${dato.duracion}</p>
@@ -871,7 +878,7 @@ $.get(URLGET, function (respuesta, estado) {
                                 $("#btn15_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
-                                      title: '<strong><u>Viejos</u></strong>',
+                                      title: '<strong><u>Venom</u></strong>',
                                       html:
                                         '<iframe width="350" height="315" src="https://www.youtube.com/embed/F4Ygcigj0Gk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                                       showCloseButton: true,
@@ -951,9 +958,9 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 1){
-      $("#farCry").prepend(`<div>
+      $("#farCry").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="farCry" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgFarCry" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgFarCry" src="${dato.imagen1}" alt="imagen Far Cry 5">
                                   <div id="farCryInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -988,16 +995,16 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     
   }
 })    
-//////////Card, trailer y cambio de imagen de Assassins//////////////
+//////////Card, trailer y cambio de imagen de Assassins Creed//////////////
 
 $.get(URLGETJUEGOS, function (respuesta, estado) {
   if(estado === "success"){
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 2){
-      $("#aCreed").prepend(`<div>
+      $("#aCreed").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="aCreed" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgAs" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgAs" src="${dato.imagen1}" alt="imagen Assassins Creed">
                                   <div id="acInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -1040,9 +1047,9 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 3){
-      $("#fallout").prepend(`<div>
+      $("#fallout").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="fallout" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgFallout" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgFallout" src="${dato.imagen1}" alt="imagen Fallout 4">
                                   <div id="FalloutInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -1085,9 +1092,9 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 4){
-      $("#cyberpunk").prepend(`<div>
+      $("#cyberpunk").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="cyberpunk" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgCyberpunk" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgCyberpunk" src="${dato.imagen1}" alt="imagen Cyberpunk 2077">
                                   <div id="cyberInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -1097,7 +1104,7 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
                                 $("#btn19_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
-                                      title: '<strong><u>Fallout 4</u></strong>',
+                                      title: '<strong><u>Cyberpunk 2077"</u></strong>',
                                       html:
                                         '<iframe width="350" height="315" src="https://www.youtube.com/embed/VhM3NRu23Sk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                                       showCloseButton: true,
@@ -1130,9 +1137,9 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 5){
-      $("#diablo").prepend(`<div>
+      $("#diablo").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="diablo" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgDiablo" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgDiablo" src="${dato.imagen1}" alt="imagen Diablo II">
                                   <div id="diabloInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -1142,7 +1149,7 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
                                 $("#btn20_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
-                                      title: '<strong><u>Fallout 4</u></strong>',
+                                      title: '<strong><u>Diablo II</u></strong>',
                                       html:
                                         '<iframe width="350" height="315" src="https://www.youtube.com/embed/AekJJj2c_Jk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                                       showCloseButton: true,
@@ -1174,9 +1181,9 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 6){
-      $("#resEvil").prepend(`<div>
+      $("#resEvil").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="resEvil" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgRev" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgRev" src="${dato.imagen1}" alt="imagen REsiden Evil Village">
                                   <div id="residentInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -1218,9 +1225,9 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 7){
-      $("#fifa").prepend(`<div>
+      $("#fifa").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="fifa" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgFifa" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgFifa" src="${dato.imagen1}" alt="imagen Fifa22">
                                   <div id="fifatInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -1263,9 +1270,9 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 8){
-      $("#mk").prepend(`<div>
+      $("#mk").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="mk" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgMortal" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgMortal" src="${dato.imagen1}" alt="imagen Mortal Kombat 11 ultimated">
                                   <div id="mortalInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -1307,9 +1314,9 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 9){
-      $("#starWars").prepend(`<div>
+      $("#starWars").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="starWars" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgStarWars" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgStarWars" src="${dato.imagen1}" alt="imagen Jedi Fallen Order">
                                   <div id="starWarsInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -1352,9 +1359,9 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 10){
-      $("#forza").prepend(`<div>
+      $("#forza").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="forza" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgForza" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgForza" src="${dato.imagen1}" alt="imagen Forza Horizon 5">
                                   <div id="forzalInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -1364,7 +1371,7 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
                                 $("#btn24_trailer").click(function (e) { 
                                   e.preventDefault();
                                     Swal.fire({
-                                      title: '<strong><u>SW Jedi Fallen Order</u></strong>',
+                                      title: '<strong><u>Forza Horizon 5</u></strong>',
                                       html:
                                         '<iframe width="350" height="315" src="https://www.youtube.com/embed/FYH9n37B7Yw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                                       showCloseButton: true,
@@ -1396,9 +1403,9 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 15){
-      $("#nba").prepend(`<div>
+      $("#nba").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="nba" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgNba" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgNba" src="${dato.imagen1}" alt="imagen NBA2K22">
                                   <div id="nbalInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -1441,9 +1448,9 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 11){
-      $("#COD").prepend(`<div>
+      $("#COD").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="COD" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgCod" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgCod" src="${dato.imagen1}" alt="imagen COD Vanguard">
                                   <div id="codlInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -1486,9 +1493,9 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 12){
-      $("#RDR2").prepend(`<div>
+      $("#RDR2").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="RDR2" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgRed" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgRed" src="${dato.imagen1}" alt="imagen Red Dead Redemption 2">
                                   <div id="redInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -1532,9 +1539,9 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 13){
-      $("#elder").prepend(`<div>
+      $("#elder").prepend(`<div class="divPeliculaJuego">
                                     <h3 id="elder" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgElder" src="${dato.imagen1}" alt="imagen jungle cruise">
+                                    <img class="item-image imgElder" src="${dato.imagen1}" alt="imagen Skyrim 2">
                                   <div id="elderInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -1577,9 +1584,9 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
     let misDatos = respuesta;
     for (const dato of misDatos) {
       if (dato.id == 14){
-      $("#gta").prepend(`<div>
-                                    <h3 id="gta" class="item-title titulos">${dato.title}</h3>
-                                    <img class="item-image imgGta" src="${dato.imagen1}" alt="imagen jungle cruise">
+      $("#gta").prepend(`<div class="divPeliculaJuego">
+                                    <h3 id="gta" class="item-title titulos nombres">${dato.title}</h3>
+                                    <img class="item-image imgGta" src="${dato.imagen1}" alt="imagen GTA V">
                                   <div id="gtaInfo" class="item-details">
                                     <p> ${dato.genero}</p>
                                     <h4 class="item-price">$ ${dato.precio}</h4>
@@ -1626,29 +1633,96 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
 
 
 //////////Contacto/////
-$("#sugerencias").append(`<div>
-                            <input type="text" class="form-control" placeholder="Tu nombre">
-                            <input type="text" class="form-control" placeholder="Tu apellido">
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="radioDefault" id="formRadioDefault">
-                              <label class="form-check-label" for="formRadioDefault">Video juegos</label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="radioDefault" id="formRadioChecked" checked="">
-                              <label class="form-check-label" for="formRadioChecked">Peliculas</label>
-                            </div>
-                            <select class="form-select" aria-label="genero preferido">
-                              <option selected="">Genero preferido</option>
-                              <option value="1">Accion</option>
-                              <option value="2">Aventura</option>
-                              <option value="3">Supervivencia</option>
-                              <option value="4">Suspenso</option>
-                              <option value="5">Terror</option>
-                              <option value="6">Aventura</option>
-                              <option value="6">Otro</option>
-                            </select>
-                            <input type="text" class="form-control" placeholder="¿Que te gustaria que incluyeramos?">
-                            <label for="formControlInput" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="formControlInput" placeholder="name@example.com">
-                            <button class="btn titulos  btnFormulario" type="submit">Enviar</button> 
-                          </div>`)
+$("#sugerencias").append(`
+                            <form class="container formulario">
+                              <input type="text" class="form-control nombretxt guardarDato" placeholder="Tu nombre" required>
+                              <input type="text" class="form-control apellidotxt guardarDato" placeholder="Tu apellido">
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radioDefault" id="formRadioDefault">
+                                <label class="form-check-label" for="formRadioDefault">Video juegos</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radioDefault" id="formRadioChecked" checked="">
+                                <label class="form-check-label" for="formRadioChecked">Peliculas</label>
+                              </div>
+                              <select class="form-select" aria-label="genero preferido">
+                                <option selected="">Genero preferido</option>
+                                <option value="1">Accion</option>
+                                <option value="2">Aventura</option>
+                                <option value="3">Supervivencia</option>
+                                <option value="4">Suspenso</option>
+                                <option value="5">Terror</option>
+                                <option value="6">Aventura</option>
+                                <option value="6">Otro</option>
+                              </select>
+                              <input type="text" class="form-control sugerenciatxt guardarDato" placeholder="¿Que te gustaria que incluyeramos?">
+                              <label for="formControlInput" class="form-label">Email address</label>
+                              <input type="email" class="form-control email guardarDato" id="formControlInput" placeholder="name@example.com">
+                              <input type="submit" value="Enviar" class="btn titulos  btnFormulario">
+                            </form>                          
+                          `)
+
+///////boton para ir al menu//////
+$("#botonArriba").append(
+  `<button id="btnScrollArriba" class="btn_ScrollArriba">
+  <i class="fas fa-arrow-circle-up"></i>
+  </button>
+
+  `)
+
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 300) {
+        $('.btn_ScrollArriba').fadeIn('slow');
+    } else {
+        $('.btn_ScrollArriba').fadeOut('slow');
+    }
+});
+$('.btn_ScrollArriba').click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({scrollTop: 0}, 600);
+});
+
+
+
+
+
+//////form sugerencias///////
+
+class nuevasSugerencias {
+  constructor(sugerenciaNombre, sugerenciaApellido, sugerenciaGenero, sugerenciaEmail) {
+      this.sugerenciaNombre = sugerenciaNombre;
+      this.sugerenciaApellido = sugerenciaApellido
+      this.sugerenciaGenero = sugerenciaGenero;
+      this.sugerenciaEmail = sugerenciaEmail;
+  }
+  
+  
+}
+const sugerencias = []
+
+
+
+$(".btnFormulario").click(function (e) { 
+  e.preventDefault();
+  alert ("HOLA");
+  const sugerenciaNombre = $(".nombretxt").val();
+  const sugerenciaApellido = $(".apellidotxt").val();
+  const sugerenciaGenero = $(".sugerenciatxt").val();
+  const sugerenciaEmail = $(".email").val();
+  localStorage.setItem("sugerenciaNombre", sugerenciaNombre);
+  localStorage.setItem("sugerenciaApellido", sugerenciaApellido);
+  localStorage.setItem("sugerenciaGenero", sugerenciaGenero);
+  localStorage.setItem("sugerenciaEmail", sugerenciaEmail);
+  
+  const jsonSugerencias = JSON.stringify(sugerencias);
+  localStorage.setItem("sugerencias", jsonSugerencias);
+  for (i=0 ; i< sugerencias.length; i++) {
+    sugerencias[i]
+
+  }
+  sugerencias.push = new nuevasSugerencias (sugerenciaNombre,sugerenciaApellido,sugerenciaGenero,sugerenciaEmail)
+
+});
+
+

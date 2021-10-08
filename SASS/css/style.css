@@ -85,41 +85,22 @@
   }
 }
 
-#sugerencias {
-  width: 30rem;
-  margin-top: 2rem;
-  padding: 0;
-}
-#sugerencias .form-control, #sugerencias .form-check-input, #sugerencias .form-check-label, #sugerencias .form-select, #sugerencias .form-label {
-  margin: 0.5rem;
-}
-#sugerencias .btnFormulario {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 0 auto;
-  padding: auto;
-  box-shadow: 0px 0px 30px 0px #F25C05;
-}
-#sugerencias .btnFormulario:hover {
-  border: solid 1px blueviolet;
-  color: deeppink;
-}
-
-.juegos .grillaJuegos .pelis_juegos img, .estrenos .peliculas .pelis_juegos img {
+.imgCarrito, .juegos .grillaJuegos .pelis_juegos img, .estrenos .peliculas .pelis_juegos img, .estrenos .juegos .pelis_juegos img {
   height: 22rem;
   margin-top: 2rem;
   border: solid 1px white;
-  box-shadow: 0px 0px 15px 0px #F25C05;
+  border-radius: 12%;
+  box-shadow: 0px 0px 15px 0px white;
   width: 15rem;
 }
 
-.juegos .grillaJuegos .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btnInfo {
+.shopping-cart .comprarButton, .juegos .grillaJuegos .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btnInfo, .estrenos .juegos .pelis_juegos .btn, .estrenos .juegos .pelis_juegos .btnInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: solid 1px blueviolet;
+  font-size: 1rem;
 }
 
 .presentacion {
@@ -133,8 +114,18 @@
   color: white;
 }
 
+@media (max-width: 568px) {
+  .presentacion h1 {
+    font-size: 1rem;
+  }
+}
 .carousel {
   margin-top: 2rem;
+}
+@media (max-width: 568px) {
+  .carousel {
+    width: 100%;
+  }
 }
 
 .estrenos .filtroGenero .activo {
@@ -142,38 +133,57 @@
   text-decoration: none;
   padding: 2rem;
 }
-.estrenos .peliculas {
+.estrenos .peliculas, .estrenos .juegos {
   margin-top: 2rem;
   padding: 0;
   width: 100%;
 }
-.estrenos .peliculas .pelis_juegos img:hover {
+.estrenos .peliculas .pelis_juegos img:hover, .estrenos .juegos .pelis_juegos img:hover {
   transform: scale(1.1, 1.1);
   border: solid 1px blueviolet;
   color: deeppink;
 }
-.estrenos .peliculas .pelis_juegos .contenidoCard h5 {
+.estrenos .peliculas .pelis_juegos .contenidoCard h5, .estrenos .juegos .pelis_juegos .contenidoCard h5 {
   margin-top: 1.4rem;
   font-size: 1.4rem;
 }
-.estrenos .peliculas .pelis_juegos .contenidoCard p {
-  margin: 3px;
+.estrenos .peliculas .pelis_juegos .contenidoCard p, .estrenos .juegos .pelis_juegos .contenidoCard p {
+  margin: 1rem;
 }
-.estrenos .peliculas .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btnInfo {
+.estrenos .peliculas .pelis_juegos .btn, .estrenos .peliculas .pelis_juegos .btnInfo, .estrenos .juegos .pelis_juegos .btn, .estrenos .juegos .pelis_juegos .btnInfo {
   text-decoration: none;
-  color: #F25C05;
+  color: white;
+  margin: 1rem;
 }
-.estrenos .peliculas .pelis_juegos .btn:hover {
+.estrenos .peliculas .pelis_juegos .btn:hover, .estrenos .juegos .pelis_juegos .btn:hover {
   color: #c501e2;
   box-shadow: 0px 0px 30px 0px #F25C05;
 }
-.estrenos .peliculas .pelis_juegos .btnInfo:hover {
+.estrenos .peliculas .pelis_juegos .btnInfo:hover, .estrenos .juegos .pelis_juegos .btnInfo:hover {
   color: #c501e2;
   box-shadow: 0px 0px 30px 0px #F25C05;
+}
+.estrenos .cardColor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12%;
+}
+.estrenos .item-details h4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1rem;
+}
+.estrenos .item-details p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1rem;
 }
 @media (max-width: 568px) {
-  .estrenos .pelis_juegos img {
-    width: 8rem;
+  .estrenos .item-details p {
+    display: none;
   }
 }
 
@@ -195,69 +205,22 @@
 .juegos .grillaJuegos .pelis_juegos .btn:hover {
   color: #c501e2;
 }
-@media (max-width: 568px) {
-  .juegos .pelis_juegos img {
-    width: 8rem;
-  }
-}
-
-ol {
-  color: yellow;
-}
-ol li {
-  color: white;
-}
 
 #contenidoCarrito img {
   border-radius: 35px;
   width: 5rem;
 }
 
-#inputSearch {
-  width: 10rem;
-  height: 2rem;
-  text-indent: 10px;
-  background-color: yellow;
-}
-
-.contentSearch {
-  width: 100%;
-  height: 1rem;
-  display: none;
-  background-color: red;
-}
-.contentSearch .contentTable {
-  width: 80%;
-  max-height: 200px;
-  height: auto;
-  background-color: red;
-  margin-left: 10px;
-  padding: 10px;
-  overflow-x: hidden;
-  overflow-y: visible;
-}
-.contentSearch .contentTable table {
-  width: 100%;
-}
-.contentSearch .contentTable table tbody tr td a {
-  display: block;
-  padding: 10px;
-  color: white;
-  text-decoration: none;
-}
-.contentSearch .contentTable table tbody tr td a:hover {
-  background-color: yellowgreen;
-}
-
 .titulos {
+  margin-top: 1rem;
   color: white;
 }
 
-.imgCarrito {
-  width: 17rem;
-  height: 22rem;
-  padding: 2rem;
-  margin: 0;
+@media (max-width: 568px) {
+  .imgCarrito {
+    height: 15rem;
+    width: 8rem;
+  }
 }
 
 .nombreJuegoPeli {
@@ -267,11 +230,154 @@ ol li {
   align-items: center;
 }
 
+.item-details {
+  margin-top: 1rem;
+}
+
+.divPeliculaJuego {
+  color: white;
+}
+
+.btn_ScrollArriba {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #c501e2;
+  background: white;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid white;
+  border-radius: 100%;
+  cursor: pointer;
+  display: none;
+}
+
+.shopping-cart .comprarButton {
+  text-decoration: none;
+  color: white;
+  margin: 1rem;
+}
+.shopping-cart .btn:hover {
+  color: #c501e2;
+  box-shadow: 0px 0px 30px 0px #F25C05;
+}
+
+#sugerencias {
+  border: solid 1px white;
+}
+#sugerencias .formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 568px) {
+  #encabezado .row {
+    display: flex;
+    flex-direction: row;
+  }
+}
+#sugerencias {
+  width: 30rem;
+  margin-top: 2rem;
+  padding: 0;
+}
+#sugerencias .form-control, #sugerencias .form-check-input, #sugerencias .form-check-label, #sugerencias .form-select, #sugerencias .form-label {
+  margin: 0.5rem;
+}
+#sugerencias .btnFormulario {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  padding: auto;
+  box-shadow: 0px 0px 30px 0px #F25C05;
+}
+#sugerencias .btnFormulario:hover {
+  border: solid 1px blueviolet;
+  color: deeppink;
+}
+@media (max-width: 568px) {
+  #sugerencias {
+    width: 100%;
+  }
+}
+
+.shoppingCartItemQuantity {
+  height: 2rem;
+  width: 3rem;
+}
+
+@media (max-width: 568px) {
+  .cartTitle {
+    display: none;
+  }
+}
+
 body {
   position: absolute;
   padding: 0;
   margin: 0;
   background-color: black;
+}
+
+footer {
+  display: flex;
+  margin-top: 3rem;
+  margin-bottom: 0;
+  padding: 0;
+  background-color: #272727;
+}
+footer .redesFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+}
+footer .redesFooter img {
+  width: 2rem;
+  padding: 0.3rem;
+}
+@media (max-width: 568px) {
+  footer {
+    display: none;
+  }
+  footer .logo img {
+    width: 8rem;
+  }
+}
+@media (max-width: 990px) {
+  footer .redes {
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 568px) {
+  footer .menu {
+    justify-content: flex-end;
+  }
+  footer .menu .navbar-nav {
+    align-items: flex-end;
+  }
+}
+footer .contacto {
+  color: white;
+}
+footer .contacto p {
+  font-size: 1rem;
+}
+footer .contacto .dedicatoria p {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+@media (max-width: 568px) {
+  footer .contacto p {
+    font-size: 0.2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

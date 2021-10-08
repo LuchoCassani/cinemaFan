@@ -1,0 +1,65 @@
+footer{
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 0;
+    padding: 0;
+    background-color: rgb(39, 39, 39);
+        .redesFooter{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            margin: 0;
+            padding: 0;
+            img{
+                width:2rem;
+                padding: .3rem;
+                
+            }
+        }       
+
+        @media (max-width: 568px){
+            
+                display: none;
+                
+           
+            .logo img{
+                width: 8rem;
+            }
+        }    
+        @media (max-width: 990px){
+            .redes{
+                justify-content: flex-end;
+            }
+        }
+        @media (max-width: 568px){
+            .menu{ 
+                justify-content: flex-end;
+                .navbar-nav{
+                    align-items: flex-end;
+                    
+                }
+
+            }
+        }
+        .contacto{
+            color: white;
+            p{
+                font-size: 1rem;
+            }
+            
+        .dedicatoria p{
+            color: white;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+}
+@media (max-width: 568px){
+    .contacto p{
+        font-size: .2rem;
+        
+    }
+}}
