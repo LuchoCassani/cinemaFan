@@ -185,8 +185,12 @@ function comprarButtonClicked() {
   updateShoppingCartTotal();
 }
 
+
+
+
 $(".comprarButton").click(function (e) { 
   e.preventDefault();
+ 
   Swal.fire({
     title: 'Excelente!',
     text: 'Gracias por tu compra, que lo disfrutes!',
@@ -196,6 +200,10 @@ $(".comprarButton").click(function (e) {
     imageAlt: 'Custom image',
   })
 });
+
+
+
+
 
 
 //////////Card, trailer y cambio de imagen de Blackwidow//////////////
@@ -1632,19 +1640,23 @@ $.get(URLGETJUEGOS, function (respuesta, estado) {
 
 
 
-//////////Contacto/////
+//////form sugerencias///////
 $("#sugerencias").append(`
-                            <form class="container formulario">
-                              <input type="text" class="form-control nombretxt guardarDato" placeholder="Tu nombre" required>
-                              <input type="text" class="form-control apellidotxt guardarDato" placeholder="Tu apellido">
+                            <form class="container" id="formulario action="" method="post">
+                              <input type="text" name="nombre" class="form-control nombretxt guardarDato" id="nombre" placeholder="Tu nombre" >
+                              
+                              <input type="text" name="apellido" class="form-control apellidotxt guardarDato" id="apellido" placeholder="Tu apellido">
+                              
                               <div class="form-check">
                                 <input class="form-check-input" type="radio" name="radioDefault" id="formRadioDefault">
                                 <label class="form-check-label titulos" for="formRadioDefault">Video juegos</label>
                               </div>
+                              
                               <div class="form-check">
                                 <input class="form-check-input" type="radio" name="radioDefault" id="formRadioChecked" checked="">
                                 <label class="form-check-label titulos" for="formRadioChecked">Peliculas</label>
                               </div>
+                              
                               <select class="form-select" aria-label="genero preferido">
                                 <option selected="">Genero preferido</option>
                                 <option value="1">Accion</option>
@@ -1655,19 +1667,16 @@ $("#sugerencias").append(`
                                 <option value="6">Aventura</option>
                                 <option value="6">Otro</option>
                               </select>
-                              <input type="text" class="form-control sugerenciatxt guardarDato" placeholder="¿Que te gustaria que incluyeramos?">
+                              
+                              <input id="sugerencia" type="text" class="form-control sugerenciatxt guardarDato" placeholder="¿Que te gustaria que incluyeramos?">
+                              
                               <label for="formControlInput" class="form-label titulos">Email address</label>
-                              <input type="email" class="form-control email guardarDato" id="formControlInput" placeholder="name@example.com">
-                              <input type="submit" value="Enviar" class="btn titulos  btnFormulario">
+                              <input type="email" name="formControlInput" class="form-control email guardarDato" id="email" placeholder="name@example.com">
+                              
+                              <input type="submit" value="Enviar" class="btn titulos  btnFormulario" id="btn-enviar">
                             </form>                          
                           `)
 
-
-
-
-
-
-//////form sugerencias///////
 
 class nuevasSugerencias {
   constructor(sugerenciaNombre, sugerenciaApellido, sugerenciaGenero, sugerenciaEmail) {
@@ -1681,12 +1690,66 @@ class nuevasSugerencias {
 }
 const sugerencias = []
 
+const msjError = 
+
+
+$("#btn-enviar").click(function (e) { 
+  e.preventDefault();
+  const nombre = $("#nombre").val();
+  const apellido = $("#apellido").val();
+  const email = $("#email").val();
+  const sugerencia = $("#sugerencia").val();
+  if(nombre == ""){
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Tenes que completar tu nombre!',
+    });
+    return false
+  }else if (apellido == ""){
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Tenes que completar tu apellido!',
+    });
+    return false
+  }
+   else if(email == ""){
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Tenes que completar tu correo!', 
+    });
+    return false
+  }else if(sugerencia == ""){
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Tenes que completar la sugerencia!', 
+    });
+    return false
+  }
+  
+  else{
+    Swal.fire({
+      title: 'Muchas garcias por tu sugerencia!',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
+  }
+
+});
 
 
 $(".btnFormulario").click(function (e) { 
   e.preventDefault();
-  
-    Swal.fire('Muchas gracias por tu sugerencia!');
+    if(nombreFormulario.text.value === " " || null){
+      alert("completar nombre")
+    };
   
 
     
